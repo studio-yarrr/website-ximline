@@ -80,16 +80,6 @@ function serve() {
 
 function sprites() {
   return src(path.src.sprites)
-    .pipe(replace(new RegExp('stroke="(?!none).*?"|fill="(?!none).*?"', 'g'), function (rep) {
-      console.log(rep)
-      if (rep[0] === 's') {
-        return 'stroke="currentColor"'
-      } else if (rep[0] === 'f') {
-        return 'fill="currentColor"'
-      } else {
-        return ''
-      }
-    }))
     .pipe(svgSprite({
       mode: {
         stack: {
@@ -98,6 +88,7 @@ function sprites() {
       },
     }
     ))
+    .pipe(replace(new RegExp('stroke="(?!none).*?"|fill="(?!none).*?"', 'g'), ''))
     .pipe(dest(path.build.sprites))
     .pipe(browserSync.stream())
 }
