@@ -45,6 +45,7 @@
     "gulp-footer": "^2.1.0",
     "gulp-purgecss": "^5.0.0",
     "gulp-remember": "^1.0.1",
+    "gulp-string-replace": "^1.1.2",
     "gulp-svg-sprite": "^2.0.3",
     "swiper": "^8.2.6",
     "yargs": "^17.7.2"
