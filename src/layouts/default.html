@@ -2,33 +2,30 @@
 <html lang="ru">
 
 <head>
-    {{> head }}
+  {{> head }}
 </head>
 
 <body>
-    {{> sprite }}
+  <!-- Header -->
+  {{> header }}
+  <!-- Header -->
 
-    <div class="page">
-        
-        <!-- Header -->
+  <!-- Main content -->
+  <main>
 
-        {{> header }}
+    {{> body }}
 
-        <!-- Main content -->
-        <main>
+  </main>
+  <!-- Main content -->
 
-            {{> body }}
+  <!-- Footer -->
+  {{> footer }}
+  <!-- Footer -->
 
-        </main>
-
-        <!-- Footer -->
-        {{> footer }}
-
-    </div>
-
-    <!-- JS -->
-    <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/app.js"></script>
+  <!-- JS -->
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/app.js"></script>
+  <!-- JS -->
 </body>
 
 </html>
