@@ -49,6 +49,7 @@ const path = {
       [srcPath +
         "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
       '!' + srcPath + 'assets/sprite/*.svg',
+      '!' + srcPath + 'assets/images/favicon/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}', 
       ],
     fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
     sprites: srcPath + 'assets/sprite/*.svg',
@@ -61,8 +62,11 @@ const path = {
     vendorcss: srcPath + "assets/js/components/*.css",
     pug: srcPath + "*.pug",
     images:
-      srcPath +
+      [srcPath +
       "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+      '!' + srcPath + 'assets/sprite/*.svg',
+      '!' + srcPath + 'assets/images/favicon/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}', 
+      ],
     fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
   },
   clean: "./" + distPath,
