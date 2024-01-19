@@ -24,7 +24,7 @@ html {
   }
 }
 
-
+@import './blocks/swiper.scss';
 
 *,
 *:before,
@@ -44,14 +44,6 @@ img {
 svg {
   transition: all 0.1s linear;
 }
-
-
-/* Blocks */
-
-@import "importsBlocks";
-
-
-
 
 .hide {
   display: none;
@@ -95,3 +87,8 @@ svg {
     object-fit: cover;
   }
 }
+
+
+/* Blocks */
+
+@import "importsBlocks";
