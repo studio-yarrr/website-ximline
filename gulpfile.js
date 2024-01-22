@@ -90,7 +90,7 @@ function sprites() {
       },
     }
     ))
-    .pipe(replace(new RegExp('stroke=".*?"|fill=".*?"', 'g'), ''))
+    .pipe(replace(new RegExp('stroke=".*?"|fill=".*?"|opacity=".*?"', 'g'), ''))
     .pipe(dest(path.build.sprites))
     .pipe(browserSync.stream())
 }
