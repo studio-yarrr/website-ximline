@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       prevScrollpos = 0;
       currentScrollPos = 0;
     };
-    const num = xl.matches ? 50 : 100;
+    const num = xl.matches ? 50 : 150;
     if (currentScrollPos > num) {
       header.classList.add('header--active');
     } else {
@@ -183,6 +183,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return wrapper;
   }
+
+  const mainswipers = document.querySelectorAll('.main-wrapper')
+  if (mainswipers.length) {
+    mainswipers.forEach(wrapper => {
+      const swiper = wrapper.querySelector('.main-swiper')
+
+      if (swiper) {
+        const pagination = wrapper.querySelector('.main-pagination-content')
+        const slides = swiper.querySelectorAll('.swiper-slide')
+        let main = null;
+        if (slides.length) {
+          slides.forEach((_, i) => {
+            const bullet = document.createElement('div')
+            bullet.classList.add('main-bullet')
+            bullet.addEventListener('click', function () {
+              if (main) {
+                main.slideTo(+i, 500)
+              }
+            })
+            bullet.innerHTML = `<div class="main-bullet-text">${pad(+i + 1, 2)}</div>`
+            pagination.appendChild(bullet)
+
+
+          })
+        }
+        const nextEl = wrapper.querySelector('.next')
+        const prevEl = wrapper.querySelector('.prev')
+        main = new Swiper(swiper, {
+          rewind: true,
+          speed: 500,
+          navigation: {
+            nextEl,
+            prevEl,
+          },
+          on: {
+            init: function (swiper) {
+              if (pagination) {
+                for(let i=0; i< pagination.children.length; i++) {
+                  pagination.children[i].classList.remove('active')
+                }
+                pagination.children[swiper.activeIndex].classList.add('active')
+              }
+            },
+            slideChange: function (swiper) {
+              if (pagination) {
+                for(let i=0; i< pagination.children.length; i++) {
+                  pagination.children[i].classList.remove('active')
+                }
+                pagination.children[swiper.activeIndex].classList.add('active')
+              }
+            }
+          }
+        })
+      }
+    })
+  }
+
+  function pad(num, size) {
+    var s = "000000000" + num;
+    return s.slice(s.length-size);
+}
 });
 
 

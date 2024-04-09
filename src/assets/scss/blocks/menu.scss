@@ -1,17 +1,34 @@
 .menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  transform: translateX(100%);
-  height: 100%;
-  width: 30%;
-  background-color: lightblue;
-  transition: all 1s ease;
-  display: none;
-  @include breakpoint($xl-bp) {
-    display: block;
-    height: 100vh;
+  display: flex;
+  gap: 4rem;
+}
+
+.menu-list {
+  display: flex;
+  gap: 4rem;
+}
+
+.menu-item {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--white);
+  transition: color .5s;
+  @media (hover: hover) and (pointer: fine) {
+  &:hover {
+    color: var(--green);
+  }
+  }
+}
+
+.menu-tel {
+  font-weight: 500;
+  font-size: 2rem;
+  color: #fff;
+  transition: color .5s;
+  @media (hover: hover) and (pointer: fine) {
+  &:hover {
+    color: var(--green);
+  }
   }
 }
 
@@ -42,34 +59,39 @@
   z-index: 4;
   display: none;
   position: relative;
+
   .burger-button-close {
+
     #first-line-burger,
     #second-line-burger,
     #third-line-burger {
-        width: 100%;
-        height: 0.2rem;
-        border-radius: 0.1rem;
-        background-color: black;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        transform-origin: center center;
-        transition: transform 0.4s ease, opacity 0.4s ease;
+      width: 100%;
+      height: 0.2rem;
+      border-radius: 0.1rem;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: center center;
+      transition: transform 0.4s ease, opacity 0.4s ease;
     }
 
     #first-line-burger {
-        top: 0%;
+      top: 0%;
     }
+
     #third-line-burger {
-        top: unset;
-        bottom: 0%;
+      top: unset;
+      bottom: 0%;
     }
   }
+
   @include breakpoint($xl-bp) {
     display: block;
     margin-left: 3rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-left: 0;
     width: 2rem;
@@ -85,10 +107,12 @@
       top: 50%;
       transform: translateX(-50%) rotate(45deg);
     }
+
     #second-line-burger {
       transform: translateX(100%);
       opacity: 0;
     }
+
     #third-line-burger {
       top: 50%;
       bottom: 0;
@@ -98,9 +122,7 @@
 }
 
 
-.menu-button--active {
-
-}
+.menu-button--active {}
 
 .overlay {
   position: absolute;
