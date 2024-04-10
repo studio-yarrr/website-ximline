@@ -1,0 +1,132 @@
+.about {
+  position: relative;
+  padding-top: 24.6rem;
+  padding-bottom: 16rem;
+}
+
+.about-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+  }
+}
+
+.about-title {
+  font-weight: 500;
+  font-size: 6.8rem;
+  line-height: 118%;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.about-desc {
+  font-weight: 300;
+  font-size: 3.2rem;
+  line-height: 4.08rem;
+  color: #fff;
+  max-width: 85rem;
+  box-sizing: content-box;
+  padding-left: 4rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-left: 0.1rem solid var(--white);
+  margin-top: 8rem;
+  letter-spacing: 0.003em;
+  position: relative;
+  z-index: 1;
+}
+
+.company {
+  display: flex;
+  gap: 8rem;
+}
+
+.company-title {
+  line-height: 122%;
+}
+
+.company-desc {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 125%;
+  color: #221c1c;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  margin-top: 2rem;
+  letter-spacing: 0.005em;
+}
+.company-block {
+  background-color: var(--grey);
+  padding: 4rem;
+  font-weight: 300;
+  font-size: 3.2rem;
+  line-height: 4.08rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+  min-width: 44.2rem;
+  max-width: 100%;
+  margin-top: 6.7rem;
+}
+.company-date {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.company-year {
+  font-weight: 300;
+  font-size: 9.6rem;
+  line-height: 104%;
+  color: #fff;
+}
+.company-mid {
+  text-align: center;
+}
+.company-bot {
+  text-align: center;
+}
+
+.quality-images {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.quality-img {
+  width: 100%;
+  height: 40.9rem;
+}
+
+.quality-caption {
+  font-weight: 400;
+  font-size: 2rem;
+  color: #6a6a6e;
+}
+
+.quality-block {
+  display: grid;
+  grid-template-columns: 1fr 48.9rem;
+  gap: 18.4rem;
+}
+
+.quality-serf {
+  background-color: #F0F0F0;
+  padding: 8.3rem;
+  height: 102.4rem;
+}

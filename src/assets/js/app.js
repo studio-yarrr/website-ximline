@@ -199,20 +199,24 @@ document.addEventListener("DOMContentLoaded", () => {
             bullet.classList.add('main-bullet')
             bullet.addEventListener('click', function () {
               if (main) {
-                main.slideTo(+i, 500)
+                main.slideTo(+i, 700)
               }
             })
-            bullet.innerHTML = `<div class="main-bullet-text">${pad(+i + 1, 2)}</div>`
+            bullet.innerHTML = `<div class="ball"></div><div class="main-bullet-text">${pad(+i + 1, 2)}</div>`
             pagination.appendChild(bullet)
-
-
           })
         }
+        pagination.style.setProperty('--lineheight', window.getComputedStyle(pagination, ':before').height)
+        pagination.style.setProperty('--percent', 0)
         const nextEl = wrapper.querySelector('.next')
         const prevEl = wrapper.querySelector('.prev')
+        let previousSlide = 0;
         main = new Swiper(swiper, {
           rewind: true,
-          speed: 500,
+          speed: 700, 
+          autoplay: {
+            delay: 3000,
+          },
           navigation: {
             nextEl,
             prevEl,
@@ -230,8 +234,24 @@ document.addEventListener("DOMContentLoaded", () => {
               if (pagination) {
                 for(let i=0; i< pagination.children.length; i++) {
                   pagination.children[i].classList.remove('active')
+                  if (swiper.activeIndex === 0) {
+                    pagination.children[i].classList.remove('reversed')
+                  }
                 }
+
+                if (previousSlide > swiper.activeIndex) {
+                  pagination.children[swiper.activeIndex].classList.add('reversed')
+                  pagination.children[previousSlide].classList.remove('reversed')
+                } else {
+                  for(let i=0; i< pagination.children.length; i++) {
+                    if (i <= swiper.activeIndex) {
+                      pagination.children[i].classList.add('reversed')
+                    }
+                  }
+                }
+                pagination.style.setProperty('--percent', swiper.activeIndex / (pagination.children.length - 1) * 100)
                 pagination.children[swiper.activeIndex].classList.add('active')
+                previousSlide = swiper.activeIndex
               }
             }
           }
@@ -243,6 +263,55 @@ document.addEventListener("DOMContentLoaded", () => {
   function pad(num, size) {
     var s = "000000000" + num;
     return s.slice(s.length-size);
+}
+
+const kgtTab = document.querySelectorAll('.mcatalog-tabs');
+if (kgtTab.length) {
+  kgtTab.forEach((el, ind) => {
+    const content = el.nextElementSibling;
+    if (content) {
+      const buttons = el.querySelectorAll('.mcatalog-btn');
+      if (buttons.length) {
+        buttons.forEach((btn, i) => {
+          btn.dataset.id = ind + i;
+          btn.addEventListener('click', function () {
+            const next = this.nextElementSibling;
+            if (next) {
+              if (content.dataset.foreign !== undefined) {
+                const button = document.querySelector(`.mcatalog-btn[data-id="${content.dataset.foreign}"]`);
+                if (button) {
+                  const foreignNext = button.nextElementSibling;
+                  if (foreignNext) {
+                    foreignNext.append(...content.children)
+                  }
+                }
+              }
+              content.dataset.foreign = this.dataset.id;
+
+              content.append(...next.children)
+
+              buttons.forEach(button => {
+                button.classList.remove('active');
+              })
+              this.classList.add('active');
+
+            }
+          })
+        })
+      }
+
+      buttons[0].click()
+    }
+  })
+}
+
+const buttons = document.querySelectorAll('.mcatalog-button')
+if (buttons.length) {
+  buttons.forEach(el => {
+    el.addEventListener('click', function () {
+      this.classList.toggle('opened')
+    })
+  })
 }
 });
 

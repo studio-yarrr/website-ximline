@@ -1,9 +1,6 @@
-.main {
-  background-color: var(--grey);
-}
-
 .main-wrapper {
   position: relative;
+  background-color: var(--grey);
 }
 
 .main-swiper {
@@ -91,14 +88,36 @@
   gap: 6rem;
   padding: 4rem 1rem;
   background-color: rgba($color: #FFFFFF, $alpha: 0.2);
-  min-width: 10.2rem  ;
+  min-width: 10.2rem;
+
   .swiper-arrow {
     width: 2.5rem;
     height: 4rem;
     fill: var(--white);
+    transition: transform .5s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: translate3d(0, -0.25rem, 0);
+      }
+    }
+
+    &:active {
+      transform: translate3d(0, -0.5rem, 0);
+    }
 
     &.next {
       transform: rotate(180deg);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          transform: rotate(180deg) translate3d(0, -0.25rem, 0);
+        }
+      }
+
+      &:active {
+        transform: rotate(180deg) translate3d(0, -0.5rem, 0);
+      }
     }
   }
 }
@@ -109,14 +128,27 @@
   gap: 4rem;
   width: 100%;
   position: relative;
-  &::before{
+
+  &::before {
     content: '';
     width: 0.1rem;
-    height: calc(100% - 5rem);
+    height: calc(100% - 5.35rem);
     background-color: #6A6A6E;
     position: absolute;
-    top: 2rem;
+    top: 2.5rem;
     left: -5rem;
+  }
+
+  &::after {
+    content: '';
+    width: 0.1rem;
+    height: 2rem;
+    background-color: var(--white);
+    position: absolute;
+    top: 2.5rem;
+    left: -5rem;
+    transform: translateY(calc(var(--lineheight) * var(--percent) / 100 - 2rem));
+    transition: transform .5s;
   }
 }
 
@@ -124,30 +156,57 @@
   font-weight: 500;
   font-size: 4.2rem;
   line-height: 5.355rem;
-  
+
   text-align: center;
   position: relative;
   cursor: pointer;
-  &::before {
-    content: '';
+  z-index: 1;
+
+  .ball {
     width: 1.8rem;
     height: 1.8rem;
     position: absolute;
     top: 1.5rem;
     left: -5.9rem;
-    background-color: #6a6a6e;
     border-radius: 100%;
     transition: transform .5s;
+    background-color: #6a6a6e;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--white);
+      transition: .5s transform .2s;
+    }
+
+    &::before {
+      transform: translate3d(0, -100%, 0);
+    }
   }
-  &::after {
-    
+
+  &.reversed {
+    .ball {
+      &::before {
+        transform: translate3d(0, 100%, 0);
+      }
+    }
   }
 
   &.active {
-    &::before {
+    .ball {
       transform: scale3d(2.2, 2.2, 1);
-      background-color: var(--white);
+
+      &::before {
+        transform: translate3d(0, 0, 0);
+      }
     }
+
+
     .main-bullet-text {
       transform: scale3d(1.5, 1.5, 1);
       color: var(--white);
@@ -160,3 +219,210 @@
   color: rgba($color: #c0c0dc, $alpha: 0.3);
 }
 
+.main-bot {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main-li {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+
+  &:first-child {
+    border-bottom: 0.1rem solid var(--black);
+  }
+}
+
+.main-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.main-subtitle {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--black);
+  line-height: 2.55rem;
+  max-width: 22rem;
+}
+
+.section-title {
+  font-weight: 500;
+  font-size: 6.8rem;
+  line-height: 147%;
+  color: #1f1e2f;
+}
+
+.mcatalog-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  margin-top: 2rem;
+}
+
+.mcatalog-btn {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 4.08rem;
+  color: #9F9FA8;
+  padding-bottom: 2rem;
+  letter-spacing: 0.01em;
+  border-bottom: 0.1rem solid transparent;
+  transition: color .5s, border-color .5s;
+
+  &.active {
+    border-color: var(--black);
+    color: var(--black);
+  }
+}
+
+.mcatalog-block {
+  display: none;
+}
+
+.mcatalog-inner {
+  display: flex;
+  gap: 8rem;
+}
+
+.mcatalog-columns {
+  columns: 24.2rem 3;
+  column-gap: 14.2rem;
+}
+.mcatalog-subtitle {
+  font-weight: 500;
+  font-size: 3.2rem;
+  color: #221c1c;
+  line-height: 4.08rem;
+  transition: color .5s;
+  @media (hover: hover) and (pointer: fine) {
+  &:hover {
+    color: var(--green);
+  }
+  }
+}
+
+.mcatalog-desc {
+  font-weight: 300;
+  font-size: 2rem;
+  color: #221c1c;
+  margin-top: 2rem;
+  line-height: 2.55rem;
+}
+
+.mcatalog-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mcatalog-button {
+  font-weight: 300;
+  font-size: 2rem;
+  color: #221c1c;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid var(--black);
+  width: 100%;
+  text-align: start;
+  transition: color .5s;
+  &.opened  {
+    color: var(--green);
+    & + .mcatalog-accblock {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+.mcatalog-accblock {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows .5s;
+}
+
+.mcatalog-accinner {
+  font-weight: 300;
+  font-size: 2rem;
+  color: #221c1c;
+  overflow: hidden;
+  line-height: 2.6rem;
+  & > * {
+    &:first-child {
+      margin-top: 1rem;
+    }
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.mcatalog-content {
+  margin-top: 8rem;
+  & > * {
+    animation: fadeEffect .5s;
+  }
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mcatalog-img {
+  width: 34.5rem;
+  height: auto;
+  flex: 0 0 auto;
+  margin-left: auto;
+  max-height: 92rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.5;
+    z-index: 1; 
+  }
+}
+
+.mcatalog-producer {
+  break-inside: avoid-column;
+  margin-top: 8rem;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.mcatalog-accordions {
+  margin-top: 4rem;
+}
+
+.mcatalog-bot {
+  margin-top: 4rem;
+  position: relative;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--black); 
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.mcatalog-botbtn {
+  background-color: var(--white);
+}

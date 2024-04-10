@@ -1,0 +1,16 @@
+<div class="mcatalog-producer">
+  <a href="producer.html" class="mcatalog-subtitle">@title</a>
+  @if(desc) {
+    <div class="mcatalog-desc">@desc</div>
+  }
+  @if(list.length) {
+  <!-- Product List -->
+  <ul class="mcatalog-accordions">
+    @for (var i = 0; i < list.length; i++) {
+      @include('mcataloglist.html', `+(JSON.stringify(list[i]))+`)
+    }
+  </ul>
+  <!-- Product List -->
+  }
+
+</div>

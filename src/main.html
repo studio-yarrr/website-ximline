@@ -45,9 +45,145 @@ title: Главная
     <div class="main-pagination">
       <button class="swiper-arrow prev"><svg><use xlink:href='./assets/images/sprite.svg#arrow'></use></svg></button>
       <div class="main-pagination-content">
-
       </div>
       <button class="swiper-arrow next"><svg><use xlink:href='./assets/images/sprite.svg#arrow'></use></svg></button>
     </div>
   </div>
+
+  <ul class="main-bot container">
+    <li class="main-li">
+      <div class="main-icon img-contain">
+        <img src="./assets/images/main/1.svg" alt="icon">
+      </div>
+      <h3 class="main-subtitle">С вами на связи опытные специалисты</h3>
+    </li>
+
+    <li class="main-li">
+      <div class="main-icon img-contain">
+        <img src="./assets/images/main/2.svg" alt="icon">
+      </div>
+      <h3 class="main-subtitle">Оперативность в подборе решений</h3>
+    </li>
+
+    <li class="main-li">
+      <div class="main-icon img-contain">
+        <img src="./assets/images/main/3.svg" alt="icon">
+      </div>
+      <h3 class="main-subtitle">Техническое сопровождение </h3>
+    </li>
+
+    <li class="main-li">
+      <div class="main-icon img-contain">
+        <img src="./assets/images/main/4.svg" alt="icon">
+      </div>
+      <h3 class="main-subtitle">Все товары сертифицированы</h3>
+    </li>
+  </ul>
 </section>
+
+<section class="mcatalog mt-180 container">
+  <h2 class="mcatalog-title section-title">Каталог</h2>
+
+  <ul class="mcatalog-tabs">
+    @loop('./partials/mcatalogtab.html', [
+      {
+        title: 'СОЖ',
+        producers: [
+        {
+          title: 'LAZERCOOL:',
+          desc: 'Водорастворимые СОЖ для мех обработки и шлифования',
+          list: [
+          {title: 'LAZERCOOL 164',},
+          {title: 'LAZERCOOL 159',},
+          {title: 'LAZERCOOL 155',},
+          {title: 'LAZERCOOL 157',},
+          {title: 'LAZERCOOL 153',},
+          {title: 'LAZERCOOL 149',},
+          {title: 'LAZERCOOL 151',},
+          {title: 'LAZERCOOL 152',},
+          ]
+        },
+        {
+          title: 'LAZERDRAW:',
+          desc: 'Масляные СОЖ для холодной штамповки',
+          list: [
+          {title: 'Lazerdraw 197',},
+          {title: 'Lazer Magnus L 67',},
+          {title: 'Lazerdraw AW 460',},
+          {title: 'Lazerdraw 203',},
+          {title: 'Lazerdraw 202',},
+          {title: 'Lazerdraw 190',},
+          ]
+        },
+        {
+          title: 'LAZERCUT:',
+          desc: 'Масляные СОЖ для механической обработки и шлифования',
+          list: [
+          {title: 'Lazercut 05G',},
+          {title: 'Lazertap 15',},
+          ]
+        },
+        {
+          title: 'LAZERFORGE:',
+          desc: 'Смазки самоиспаряющиеся',
+          list: [
+          {title: 'Lazerforge LE-R3',},
+          {title: 'Lazerforge LE-R1 / R2',},
+          ]
+        },
+        {
+          title: 'LAZER ChainOil',
+          desc: '',
+          list: []
+        },
+        {
+          title: 'LAZER SLIDEWAY',
+          desc: '',
+          list: []
+        },
+        ]
+      },
+      {
+        title: 'Индустриальные клеи',
+        producers: [
+        {
+          title: 'LAZERCOOL:',
+          desc: 'Водорастворимые СОЖ для мех обработки и шлифования',
+          list: [
+          ]
+        },
+        {
+          title: 'LAZERDRAW:',
+          desc: 'Масляные СОЖ для холодной штамповки',
+          list: [
+          ]
+        },
+        ]
+      },
+      {
+        title: 'Оборудование',
+        producers: [
+        {
+          title: 'LAZERCOOL:',
+          desc: 'Водорастворимые СОЖ для мех обработки и шлифования',
+          list: [
+          ]
+        },
+        {
+          title: 'LAZERDRAW:',
+          desc: 'Масляные СОЖ для холодной штамповки',
+          list: [
+          ]
+        },
+        ]
+      },
+    ])
+  </ul>
+
+  <div class="mcatalog-content"></div>
+
+  <div class="mcatalog-bot">
+    <button class="mcatalog-botbtn btn btn-grey">Задать вопрос</button></div>
+</section>
+
+<div class="mt-80"></div>

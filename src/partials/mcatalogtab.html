@@ -1,0 +1,22 @@
+<!-- Tab -->
+<li class="mcatalog-tab">
+  <button class="mcatalog-btn">
+    @title
+  </button>
+
+  <div class="mcatalog-block">
+    <div class="mcatalog-inner">
+      <!-- Tab List -->
+      <div class="mcatalog-columns">
+        @for (var i = 0; i < producers.length; i++) {
+          @include('mcatalogproducers.html', `+(JSON.stringify(producers[i]))+`)
+        }
+      </div>
+      <!-- Tab List -->
+      <div class="mcatalog-img img-cover">
+        <img src="./assets/images/mcatalog/1.jpg" alt="mcatalog">
+      </div>
+    </div>
+  </div>
+</li>
+<!-- Tab -->
