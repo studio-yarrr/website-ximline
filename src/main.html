@@ -81,109 +81,82 @@ title: Главная
   </ul>
 </section>
 
-<section class="mcatalog mt-180 container">
-  <h2 class="mcatalog-title section-title">Каталог</h2>
+<section class="mproducts container mt-180">
+  <h2 class="mproducts-title section-title">Продукция</h2>
 
-  <ul class="mcatalog-tabs">
-    @loop('./partials/mcatalogtab.html', [
-      {
-        title: 'СОЖ',
-        producers: [
-        {
-          title: 'LAZERCOOL:',
-          desc: 'Водорастворимые СОЖ для мех обработки и шлифования',
-          list: [
-          {title: 'LAZERCOOL 164',},
-          {title: 'LAZERCOOL 159',},
-          {title: 'LAZERCOOL 155',},
-          {title: 'LAZERCOOL 157',},
-          {title: 'LAZERCOOL 153',},
-          {title: 'LAZERCOOL 149',},
-          {title: 'LAZERCOOL 151',},
-          {title: 'LAZERCOOL 152',},
-          ]
-        },
-        {
-          title: 'LAZERDRAW:',
-          desc: 'Масляные СОЖ для холодной штамповки',
-          list: [
-          {title: 'Lazerdraw 197',},
-          {title: 'Lazer Magnus L 67',},
-          {title: 'Lazerdraw AW 460',},
-          {title: 'Lazerdraw 203',},
-          {title: 'Lazerdraw 202',},
-          {title: 'Lazerdraw 190',},
-          ]
-        },
-        {
-          title: 'LAZERCUT:',
-          desc: 'Масляные СОЖ для механической обработки и шлифования',
-          list: [
-          {title: 'Lazercut 05G',},
-          {title: 'Lazertap 15',},
-          ]
-        },
-        {
-          title: 'LAZERFORGE:',
-          desc: 'Смазки самоиспаряющиеся',
-          list: [
-          {title: 'Lazerforge LE-R3',},
-          {title: 'Lazerforge LE-R1 / R2',},
-          ]
-        },
-        {
-          title: 'LAZER ChainOil',
-          desc: '',
-          list: []
-        },
-        {
-          title: 'LAZER SLIDEWAY',
-          desc: '',
-          list: []
-        },
-        ]
-      },
-      {
-        title: 'Индустриальные клеи',
-        producers: [
-        {
-          title: 'LAZERCOOL:',
-          desc: 'Водорастворимые СОЖ для мех обработки и шлифования',
-          list: [
-          ]
-        },
-        {
-          title: 'LAZERDRAW:',
-          desc: 'Масляные СОЖ для холодной штамповки',
-          list: [
-          ]
-        },
-        ]
-      },
-      {
-        title: 'Оборудование',
-        producers: [
-        {
-          title: 'LAZERCOOL:',
-          desc: 'Водорастворимые СОЖ для мех обработки и шлифования',
-          list: [
-          ]
-        },
-        {
-          title: 'LAZERDRAW:',
-          desc: 'Масляные СОЖ для холодной штамповки',
-          list: [
-          ]
-        },
-        ]
-      },
-    ])
+  <ul class="mproducts-list">
+    <li class="mproducts-item">
+      <div class="mproducts-img img-cover">
+        <img src="./assets/images/mproducts/1.jpg" alt="Оборудование для порошкового окрашивания металлов">
+
+        <h3 class="mproducts-subtitle">Оборудование <br>для порошкового окрашивания металлов</h3>
+      </div>
+
+      <button class="btn btn-black mproducts-btn">Подробнее</button>
+    </li>
+    <li class="mproducts-item">
+      <div class="mproducts-img img-cover">
+        <img src="./assets/images/mproducts/2.jpg" alt="Индустриальные клеи и герметики">
+
+        <h3 class="mproducts-subtitle">Индустриальные клеи и герметики</h3>
+      </div>
+
+      <button class="btn btn-black mproducts-btn">Подробнее</button>
+    </li>
+    <li class="mproducts-item">
+      <div class="mproducts-img img-cover">
+        <img src="./assets/images/mproducts/3.jpg" alt="СОЖ">
+
+        <h3 class="mproducts-subtitle">СОЖ</h3>
+      </div>
+
+      <button class="btn btn-black mproducts-btn">Подробнее</button>
+    </li>
   </ul>
 
-  <div class="mcatalog-content"></div>
+  <div class="mproducts-desc">
+    Lorem ipsum dolor sit amet consectetur. Pulvinar donec orci nulla lacinia sed auctor egestas tristique. Interdum proin lectus mollis urna suscipit cursus sed. 
+  </div>
+</section>
 
-  <div class="mcatalog-bot">
-    <button class="mcatalog-botbtn btn btn-grey">Задать вопрос</button></div>
+<section class="mabout container mt-180">
+  <h2 class="mabout-title">
+    О компании
+  </h2>
+
+  <div class="mabout-desc">
+    <p>Компания ООО «Химлайн» - молодая организация, основанная профессионалами своего дела с 20-летним опытом работы на рынке индустриальных клеев/герметиков и подготовки металлов под порошковое и жидкое окрашивание.</p>
+    <p>Глубокое знание отраслевых стандартов и технических регламентов, методик расчетов и испытаний, международных стандартов по обеспечению качества в различных отраслях промышленности, помогает нам говорить с нашими заказчиками на одном языке и выстраивать эффективное взаимодействие</p>
+  </div>
+
+  <a href="about.html" class="mabout-btn btn">Подробнее</a> 
+
+  <div class="mabout-img img-cover">
+    <img src="./assets/images/mabout/bg.svg" alt="bg">
+  </div>
+</section>
+
+<section class="callback container mt-180">
+  <h2 class="callback-title">Обратная связь</h2>
+  <div class="callback-wrapper">
+    <div class="callback-left">
+      <div class="callback-subtitle">У вас возникли вопросы? Оставляйте вашу заявку и мы обязательно свяжемся с вами!</div>
+      <form action="#" class="callback-form">
+        <input type="text" name="name" placeholder="Ваше Имя" class="callback-input inp">
+        <input type="text" name="tel" placeholder="Ваш номер телефона" class="callback-input inp">
+        <input type="text" name="email" placeholder="Ваша почта" class="callback-input inp">
+
+        <div class="callback-text">
+          Отправляя данную форму вы подтверждаете согласие с обработкой персональных данных и политикой конфиденциальности.
+        </div>
+
+        <button type="submit" class="btn btn-black callback-btn">Отправить</button>
+      </form>
+    </div>
+    <div class="callback-img img-cover">
+      <img src="./assets/images/callback/1.jpg" alt="callback">
+    </div>
+  </div>
 </section>
 
 <div class="mt-80"></div>

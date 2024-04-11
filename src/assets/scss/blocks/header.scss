@@ -15,7 +15,7 @@
 
 .header--active {
   background-color: var(--white);
-
+  box-shadow: 0px 2rem 2rem -1rem rgba(26, 28, 25, 0.1);
   .menu-tel,
   .menu-item {
     color: var(--black);
@@ -67,7 +67,7 @@
 }
 
 .fill-grey {
-  fill: var(--grey-2);
+  fill: var(--lgreen);
   transition: fill .5s;
 }
 
