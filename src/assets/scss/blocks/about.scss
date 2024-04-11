@@ -130,3 +130,64 @@
   padding: 8.3rem;
   height: 102.4rem;
 }
+
+.prior {
+  padding-top: 24.8rem;
+  padding-bottom: 26.9rem;
+
+  background-color: var(--grey);
+
+  position: relative;
+  overflow: hidden;
+}
+.prior-list {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.prior-item {
+  border-bottom: 0.1rem solid var(--white);
+  width: max-content;
+  max-width: 100%;
+  padding-right: 4.5rem;
+  padding-bottom: 2rem;
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+.prior-subtitle {
+  font-weight: 500;
+  font-size: 6.8rem;
+  line-height: 147%;
+  color: #fff;
+}
+.prior-text {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 4.08rem;
+  color: #fff;
+  margin-top: 2rem;
+  max-width: 68.9rem;
+}
+
+.prior-img {
+    height: calc(100% - 4rem);
+    width: 81rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  
+    img {
+      object-position: top right;
+    }
+}
+
+.prior-block {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 4.08rem;
+  color: #221c1c;
+  margin-top: 6rem;
+}
