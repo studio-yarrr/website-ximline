@@ -88,3 +88,276 @@
   width: max-content;
   max-width: 100%;
 }
+
+
+.sozh-list {
+}
+.sozh-item {
+  display: grid;
+  grid-template-columns: 1fr 58.5rem;
+  gap: 6rem;
+  &.opened {
+    .sozh-right {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  &:first-child {
+    .sozh-left {
+      padding-top: 0;
+      &::before {
+        content: normal;
+      }
+    }
+  }
+}
+.sozh-left {
+  padding-bottom: 6.5rem;
+  padding-top: 6.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--black);
+    position: absolute;
+    right: 0;
+    max-width: 103.5rem;
+  }
+  &::after {
+    bottom: 0;
+  }
+
+}
+.sozh-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: start;
+  padding-right: 0;
+  width: 100%;
+  max-width: 103.5rem;
+  box-sizing: content-box;
+  &:focus {
+    outline: none;
+  }
+  &.opened {
+    .sozh-plusminus {
+      &::before,
+      &::after {
+        transform: translate3d(-50%, -50%, 0);
+        background-color: #3b9977;
+      }
+    }
+
+    & + .sozh-block {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+.sozh-name {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 125%;
+  color: #3b9977;
+  display: block;
+  transition: color .5s;
+  @media (hover: hover) and (pointer: fine) {
+  &:hover {
+    color: var(--green);
+  }
+  }
+}
+.sozh-desc {
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 125%;
+  color: #1f1e2f;
+  display: block;
+}
+.sozh-plusminus {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  position: relative;
+  margin-right: 0.4rem;
+  flex: 0 0 auto;
+
+  &::after,
+  &::before {
+    content: '';
+    width: 100%;
+    height: 0.7rem;
+    background-color: var(--black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transition: transform .5s, background-color .5s;
+  }
+
+  &::after {
+    transform: translate3d(-50%, -50%, 0) rotate(90deg) ;
+  }
+
+
+}
+.sozh-block {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows .5s;
+}
+.sozh-inner {
+  display: flex;
+  gap: 6.1rem;
+  overflow: hidden;
+
+  & > * {
+    margin-top: 4.6rem;
+  }
+}
+.sozh-tabs {
+}
+.sozh-tab {
+}
+.sozh-btn {
+  font-weight: 300;
+  font-size: 3.2rem;
+  color: rgba(31, 30, 47, 0.3);
+  background-color: transparent;
+  padding-right: 4rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  width: 100%;
+  text-align: start;
+  transition: color .5s, background-color .5s;
+  &.active {
+    color: #fafafa;
+    background-color: #3b9977;
+  }
+}
+.sozh-hidden {
+  display: none;
+}
+.sozh-innertext {
+  font-weight: 300;
+  font-size: 2rem;
+  color: #1f1e2f;
+  max-width: 66.9rem;
+  line-height: 2.6rem;
+}
+.sozh-content {
+  & > * {
+    animation: fadeEffect .5s;
+  }
+}
+.sozh-right {
+  transition: clip-path .5s;
+  clip-path: inset(0 100% 0 0);
+  max-height: 38.9rem;
+}
+.sozh-link {
+  position: relative;
+  height: 100%;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity .5s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+  }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.sozh-arrow {
+  width: 7.4rem;
+  height: 7.4rem;
+  background-color: #3b9977;
+  fill: var(--white);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.sozh-maindesc {
+  padding-right: 0;
+  margin-top: 2rem;
+  max-width: 103.5rem;
+  box-sizing: content-box;
+
+}
+
+.glue-block {
+  padding-right: 0;
+  display: grid;
+  grid-template-columns: 1fr 58.5rem;
+  gap: 6rem;
+  margin-top: 4rem;
+}
+
+.glue-list {
+  display: flex;
+  flex-direction: column;
+}
+.glue-item {
+  border-bottom: 0.1rem solid var(--black);
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+
+  font-weight: 500;
+  font-size: 3.2rem;
+  line-height: 125%;
+  color: #1f1e2f;
+  
+  a {
+    transition: color .5s;  
+    @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--green);
+    }
+    }
+  }
+  &:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+
+}
+
+.glue-img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    opacity: 0.5;
+  }
+}

@@ -305,12 +305,38 @@ if (kgtTab.length) {
   })
 }
 
-const buttons = document.querySelectorAll('.mcatalog-button')
+const buttons = document.querySelectorAll('.mcatalog-button, .sozh-button')
 if (buttons.length) {
   buttons.forEach(el => {
     el.addEventListener('click', function () {
       this.classList.toggle('opened')
+      const sozh = this.closest('.sozh-item')
+      if (sozh) {
+        sozh.classList.toggle('opened')
+      }
     })
+  })
+}
+
+const sozhtabs = document.querySelectorAll('.sozh-tabs')
+if (sozhtabs.length) {
+  sozhtabs.forEach(tab => {
+    const content = tab.nextElementSibling
+    const btns = tab.querySelectorAll('.sozh-btn')
+    if (btns.length && content) {
+      btns.forEach(el => {
+        el.addEventListener('click', function () {
+          const next = this.nextElementSibling
+          if (next) {
+            content.innerHTML = next.innerHTML
+            btns.forEach(el => el.classList.remove('active'))
+            this.classList.add('active')
+          }
+        })
+      })
+
+      btns[0].click();
+    }
   })
 }
 });
