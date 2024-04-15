@@ -339,6 +339,32 @@ if (sozhtabs.length) {
     }
   })
 }
+
+const callback = (entries) => {
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('loaded')
+    } else {
+    }
+  })
+
+};
+
+const observer = new IntersectionObserver(callback, { rootMargin: '-50px' });
+
+setTimeout(() => {
+  const target = document.querySelectorAll('[data-animonscroll]');
+  if (target.length) {
+    target.forEach(el => {
+      if (xl.matches) {
+        el.classList.add('loaded')
+      } else {
+        observer.observe(el);
+      }
+    })
+  } 
+}, 0)
 });
 
 

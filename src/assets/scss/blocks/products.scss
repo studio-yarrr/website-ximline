@@ -274,19 +274,23 @@
     transition: opacity .5s;
   }
 
-  @media (hover: hover) and (pointer: fine) {
-  &:hover {
-    &::before {
-      opacity: 0;
-    }
-  }
-  }
+
 
   img {
     position: absolute;
     top: 0;
     left: 0;
   }
+}
+
+a.sozh-link {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      &::before {
+        opacity: 0;
+      }
+    }
+    }
 }
 .sozh-arrow {
   width: 7.4rem;
