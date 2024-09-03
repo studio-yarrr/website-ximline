@@ -40,14 +40,22 @@
 }
 
 
-.header-logo {
-  padding-left: 3.3rem;
-}
-
 .logo {
   display: flex;
   align-items: flex-end;
   position: relative;
+
+  .logo-icon {
+    width: 11.4rem;
+    height: 6.6rem;
+  }
+
+  .logo-text {
+    position: absolute;
+    top: 41px;
+    left: 50px;
+  }
+
 
   @media (hover: hover) and (pointer: fine) {
   &:hover {
@@ -61,10 +69,7 @@
   }
 }
 
-.logo-icon {
-  width: 11.4rem;
-  height: 6.6rem;
-}
+
 
 .fill-grey {
   fill: var(--lgreen);
@@ -76,14 +81,10 @@
   transition: fill .5s;
 }
 
-.logo-text {
-  position: absolute;
-  top: 3.9rem;
-  left: 8.3rem;
-}
+
 
 .logo-top {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
   text-transform: uppercase;
   color: var(--white);

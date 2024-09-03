@@ -38,7 +38,6 @@ html {
   width: 0;
 }
 
-body {}
 
 img {
   image-rendering: crisp-edges;
@@ -162,8 +161,9 @@ svg {
   }
 }
 
-.mt-180 {
-  margin-top: 18rem;
+.mt-170 {
+  margin-top: 17rem;
+  margin-bottom: 18rem;
 }
 
 .mt-80 {
@@ -238,6 +238,37 @@ svg {
   transform: scale3d(1, 1, 1);
 } 
 
+
+.button {
+  display: block;
+  z-index: 1;
+  padding: 1.4rem 2.5rem;
+  background-color: var(--lgreen);
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--white);
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &.white{
+    background-color: var(--white);
+    border: 0.2rem solid var(--lgreen);
+    color: var(--lgreen);
+
+    &:hover {
+      background-color: var(--lgreen);
+      color: var(--white);
+      filter: brightness(1);
+    }
+  }
+}
 
 /* Blocks */
 
