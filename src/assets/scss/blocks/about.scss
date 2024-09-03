@@ -51,10 +51,14 @@
 .company {
   display: flex;
   gap: 8rem;
+  padding-top: 18rem;
 }
 
 .company-title {
-  line-height: 122%;
+  font-weight: 500;
+  color: var(--lgreen);
+  font-size: 6.8rem;
+  line-height: 8rem;
 }
 
 .company-desc {
@@ -71,19 +75,36 @@
   letter-spacing: 0.005em;
 }
 .company-block {
-  background-color: var(--grey);
-  padding: 4rem;
+  background-color: #47455033;
   font-weight: 300;
   font-size: 3.2rem;
-  line-height: 4.08rem;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rem;
   min-width: 44.2rem;
   max-width: 100%;
   margin-top: 6.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+
+  .company-block__item{
+    transition: 0.3s;
+    width: 100%;
+    height: 18.1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 4.8rem;
+
+    &:hover{
+      background-color: var(--lgreen);
+    }
+  }
 }
 .company-date {
   display: flex;
