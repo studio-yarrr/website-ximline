@@ -44,18 +44,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     disableScroll() {
-        // Get the current page scroll position;
-        const scrollTop = window.pageYOffset  || document.documentElement.scrollTop;
-        const scrollLeft = window.pageXOffset  || document.documentElement.scrollLeft;
-      
-            // if any scroll is attempted, set this to the previous value;
-            window.onscroll = function() {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
+      // Get the current page scroll position;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      // if any scroll is attempted, set this to the previous value;
+      window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+      };
     }
 
     enableScroll() {
-      window.onscroll = function() {};
+      window.onscroll = function () { };
     }
   }
 
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let previousSlide = 0;
         main = new Swiper(swiper, {
           rewind: true,
-          speed: 700, 
+          speed: 700,
           // autoplay: {
           //   delay: 3000,
           // },
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           on: {
             init: function (swiper) {
               if (pagination) {
-                for(let i=0; i< pagination.children.length; i++) {
+                for (let i = 0; i < pagination.children.length; i++) {
                   pagination.children[i].classList.remove('active')
                 }
                 pagination.children[swiper.activeIndex].classList.add('active')
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             slideChange: function (swiper) {
               if (pagination) {
-                for(let i=0; i< pagination.children.length; i++) {
+                for (let i = 0; i < pagination.children.length; i++) {
                   pagination.children[i].classList.remove('active')
                   if (swiper.activeIndex === 0) {
                     pagination.children[i].classList.remove('reversed')
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   pagination.children[swiper.activeIndex].classList.add('reversed')
                   pagination.children[previousSlide].classList.remove('reversed')
                 } else {
-                  for(let i=0; i< pagination.children.length; i++) {
+                  for (let i = 0; i < pagination.children.length; i++) {
                     if (i <= swiper.activeIndex) {
                       pagination.children[i].classList.add('reversed')
                     }
@@ -262,112 +262,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function pad(num, size) {
     var s = "000000000" + num;
-    return s.slice(s.length-size);
-}
+    return s.slice(s.length - size);
+  }
 
-const kgtTab = document.querySelectorAll('.mcatalog-tabs');
-if (kgtTab.length) {
-  kgtTab.forEach((el, ind) => {
-    const content = el.nextElementSibling;
-    if (content) {
-      const buttons = el.querySelectorAll('.mcatalog-btn');
-      if (buttons.length) {
-        buttons.forEach((btn, i) => {
-          btn.dataset.id = ind + i;
-          btn.addEventListener('click', function () {
-            const next = this.nextElementSibling;
-            if (next) {
-              if (content.dataset.foreign !== undefined) {
-                const button = document.querySelector(`.mcatalog-btn[data-id="${content.dataset.foreign}"]`);
-                if (button) {
-                  const foreignNext = button.nextElementSibling;
-                  if (foreignNext) {
-                    foreignNext.append(...content.children)
+  const kgtTab = document.querySelectorAll('.mcatalog-tabs');
+  if (kgtTab.length) {
+    kgtTab.forEach((el, ind) => {
+      const content = el.nextElementSibling;
+      if (content) {
+        const buttons = el.querySelectorAll('.mcatalog-btn');
+        if (buttons.length) {
+          buttons.forEach((btn, i) => {
+            btn.dataset.id = ind + i;
+            btn.addEventListener('click', function () {
+              const next = this.nextElementSibling;
+              if (next) {
+                if (content.dataset.foreign !== undefined) {
+                  const button = document.querySelector(`.mcatalog-btn[data-id="${content.dataset.foreign}"]`);
+                  if (button) {
+                    const foreignNext = button.nextElementSibling;
+                    if (foreignNext) {
+                      foreignNext.append(...content.children)
+                    }
                   }
                 }
+                content.dataset.foreign = this.dataset.id;
+
+                content.append(...next.children)
+
+                buttons.forEach(button => {
+                  button.classList.remove('active');
+                })
+                this.classList.add('active');
+
               }
-              content.dataset.foreign = this.dataset.id;
+            })
+          })
+        }
 
-              content.append(...next.children)
+        buttons[0].click()
+      }
+    })
+  }
 
-              buttons.forEach(button => {
-                button.classList.remove('active');
-              })
-              this.classList.add('active');
+  const buttons = document.querySelectorAll('.mcatalog-button, .sozh-button')
+  if (buttons.length) {
+    buttons.forEach(el => {
+      el.addEventListener('click', function () {
+        this.classList.toggle('opened')
+        const sozh = this.closest('.sozh-item')
+        if (sozh) {
+          sozh.classList.toggle('opened')
+        }
+      })
+    })
+  }
 
+  const sozhtabs = document.querySelectorAll('.sozh-tabs')
+  if (sozhtabs.length) {
+    sozhtabs.forEach(tab => {
+      const content = tab.nextElementSibling
+      const btns = tab.querySelectorAll('.sozh-btn')
+      if (btns.length && content) {
+        btns.forEach(el => {
+          el.addEventListener('click', function () {
+            const next = this.nextElementSibling
+            if (next) {
+              content.innerHTML = next.innerHTML
+              btns.forEach(el => el.classList.remove('active'))
+              this.classList.add('active')
             }
           })
         })
-      }
 
-      buttons[0].click()
-    }
-  })
-}
-
-const buttons = document.querySelectorAll('.mcatalog-button, .sozh-button')
-if (buttons.length) {
-  buttons.forEach(el => {
-    el.addEventListener('click', function () {
-      this.classList.toggle('opened')
-      const sozh = this.closest('.sozh-item')
-      if (sozh) {
-        sozh.classList.toggle('opened')
+        btns[0].click();
       }
     })
-  })
-}
+  }
 
-const sozhtabs = document.querySelectorAll('.sozh-tabs')
-if (sozhtabs.length) {
-  sozhtabs.forEach(tab => {
-    const content = tab.nextElementSibling
-    const btns = tab.querySelectorAll('.sozh-btn')
-    if (btns.length && content) {
-      btns.forEach(el => {
-        el.addEventListener('click', function () {
-          const next = this.nextElementSibling
-          if (next) {
-            content.innerHTML = next.innerHTML
-            btns.forEach(el => el.classList.remove('active'))
-            this.classList.add('active')
-          }
-        })
-      })
+  const callback = (entries) => {
 
-      btns[0].click();
-    }
-  })
-}
-
-const callback = (entries) => {
-
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('loaded')
-    } else {
-    }
-  })
-
-};
-
-const observer = new IntersectionObserver(callback, { rootMargin: '-50px' });
-
-setTimeout(() => {
-  const target = document.querySelectorAll('[data-animonscroll]');
-  if (target.length) {
-    target.forEach(el => {
-      if (xl.matches) {
-        el.classList.add('loaded')
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('loaded')
       } else {
-        observer.observe(el);
       }
     })
-  } 
-}, 0)
+
+  };
+
+  const observer = new IntersectionObserver(callback, { rootMargin: '-50px' });
+
+  setTimeout(() => {
+    const target = document.querySelectorAll('[data-animonscroll]');
+    if (target.length) {
+      target.forEach(el => {
+        if (xl.matches) {
+          el.classList.add('loaded')
+        } else {
+          observer.observe(el);
+        }
+      })
+    }
+  }, 0)
 });
 
 
+const footerRulesElement = document.querySelector('.footer-rules');
+
+if (footerRulesElement) {
+  const currentYear = new Date().getFullYear();
+  footerRulesElement.innerHTML = footerRulesElement.innerHTML.replace(/\d{4}/, currentYear);
+}
 
 
 
