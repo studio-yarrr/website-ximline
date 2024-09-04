@@ -10,6 +10,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+
   &::before {
     content: '';
     width: 100%;
@@ -64,7 +65,7 @@
 .company-desc {
   font-weight: 500;
   font-size: 3.2rem;
-  line-height: 125%;
+  line-height: 4.1rem;
   color: #221c1c;
 
   display: flex;
@@ -74,6 +75,7 @@
   margin-top: 2rem;
   letter-spacing: 0.005em;
 }
+
 .company-block {
   background-color: #47455033;
   font-weight: 300;
@@ -91,7 +93,7 @@
   flex-direction: column;
   user-select: none;
 
-  .company-block__item{
+  .company-block__item {
     transition: 0.3s;
     width: 100%;
     height: 18.1rem;
@@ -101,43 +103,64 @@
     justify-content: center;
     line-height: 4.8rem;
 
-    &:hover{
+    &:hover {
       background-color: var(--lgreen);
     }
   }
 }
+
 .company-date {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .company-year {
   font-weight: 300;
   font-size: 9.6rem;
   line-height: 104%;
   color: #fff;
 }
+
 .company-mid {
   text-align: center;
 }
+
 .company-bot {
   text-align: center;
+}
+
+.quality {
+  &.mt-200 {
+    margin-top: 20rem;
+  }
 }
 
 .quality-images {
   display: flex;
   flex-direction: column;
   gap: 6rem;
-}
-.quality-img {
-  width: 100%;
-  height: 40.9rem;
-}
 
-.quality-caption {
-  font-weight: 400;
-  font-size: 2rem;
-  color: #6a6a6e;
+  .temix {
+    width: 42.1rem;
+    margin-top: 10rem;
+    margin-left: 9.9rem;
+    height: fit-content;
+  }
+
+  .colin {
+    height: fit-content;
+    margin-top: 3.2rem;
+    margin-left: 6.5rem;
+  }
+
+  .quality-caption{
+    font-weight: 400;
+    font-size: 2rem;
+    color: #6a6a6e;
+    margin-top: 2.33rem;
+    margin-left: 11.5rem;
+  }
 }
 
 .quality-block {
@@ -150,6 +173,8 @@
   background-color: #F0F0F0;
   padding: 8.3rem;
   height: 102.4rem;
+  margin-top: 18.2rem;
+  margin-bottom: 18rem;
 }
 
 .prior {
@@ -161,29 +186,34 @@
   position: relative;
   overflow: hidden;
 }
+
 .prior-list {
   margin-top: 8rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+
 .prior-item {
   border-bottom: 0.1rem solid var(--white);
   width: max-content;
   max-width: 100%;
   padding-right: 4.5rem;
   padding-bottom: 2rem;
+
   &:last-child {
     border-bottom: 0;
     padding-bottom: 0;
   }
 }
+
 .prior-subtitle {
   font-weight: 500;
   font-size: 6.8rem;
   line-height: 147%;
   color: #fff;
 }
+
 .prior-text {
   font-weight: 500;
   font-size: 3.2rem;
@@ -194,20 +224,20 @@
 }
 
 .prior-img {
-    height: calc(100% - 4rem);
-    width: 81rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  
-    img {
-      object-position: top right;
-    }
+  height: calc(100% - 4rem);
+  width: 81rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  img {
+    object-position: top right;
+  }
 }
 
 .prior-block {
   font-weight: 500;
-  font-size: 3.2rem;
+  font-size: 3.23rem;
   line-height: 4.08rem;
   color: #221c1c;
   margin-top: 6rem;
