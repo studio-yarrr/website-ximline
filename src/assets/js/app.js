@@ -375,8 +375,23 @@ if (footerRulesElement) {
   footerRulesElement.innerHTML = footerRulesElement.innerHTML.replace(/\d{4}/, currentYear);
 }
 
+ 
 
-
+const productSwiper = document.querySelector('.products-swiper');
+if (productSwiper) {
+  const swiperInstance = new Swiper('.products-swiper', {
+    slidesPerView: 3, 
+    spaceBetween: 20, 
+    navigation: {
+      nextEl: '.product-swiper-next',
+      prevEl: '.product-swiper-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+  });
+}
 
 
 

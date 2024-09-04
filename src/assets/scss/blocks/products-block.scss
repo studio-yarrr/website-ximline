@@ -1,8 +1,20 @@
 .products-block {
     margin: 0 0 18rem 0;
 
+    .products-block__backgroudn-image{
+        img{
+            width: 100%;
+        }
+    }
+
     .products-swiper {
         margin-top: 18rem;
+        overflow: hidden;
+
+        &.container{
+            padding: 0!important;
+            width: 144rem;
+        }
 
         .product-item {
             width: 46.7rem;
@@ -11,7 +23,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-color: aqua;
             color: white;
             position: relative;
             user-select: none;
@@ -47,7 +58,61 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                width: 100%;
             }
         }
+
+        .product-swiper__controls{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+
+            .control{
+                width: 15.9rem;
+                height: 5rem;
+                background-color: #3B9977;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    filter: brightness(0.9);
+                    cursor: pointer;
+                }
+
+                &.swiper-button-disabled{
+                    background-color: white;
+                    color: #3B9977;  
+                    border: #3B9977 2px solid;
+
+                    svg{
+                        color: #3B9977;
+                    }
+                }
+
+                svg{
+                    width: 9.1rem;
+
+                    &.rotate{
+                        rotate: 180deg;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            background-color: #D9D9D9; 
+            opacity: 0.7;
+            border-radius: 0; 
+            margin: 0 5px; 
+          }
+          
+          .swiper-pagination-bullet-active {
+            background-color: #3B9977; 
+            opacity: 1;
+          }
     }
 }
