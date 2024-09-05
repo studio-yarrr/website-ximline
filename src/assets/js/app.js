@@ -375,13 +375,13 @@ if (footerRulesElement) {
   footerRulesElement.innerHTML = footerRulesElement.innerHTML.replace(/\d{4}/, currentYear);
 }
 
- 
 
-const productSwiper = document.querySelector('.products-swiper');
+
+const productSwiper = document.querySelector('.image-product-swiper');
 if (productSwiper) {
-  const swiperInstance = new Swiper('.products-swiper', {
-    slidesPerView: 3, 
-    spaceBetween: 20, 
+  const swiperInstance = new Swiper('.image-product-swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
     navigation: {
       nextEl: '.product-swiper-next',
       prevEl: '.product-swiper-prev',
@@ -393,6 +393,21 @@ if (productSwiper) {
   });
 }
 
+const AlternativeProductSwiper = document.querySelector('.alternative-product-swiper');
+if (productSwiper) {
+  const swiperInstance = new Swiper('.alternative-product-swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.alternative-product-swiper-next',
+      prevEl: '.alternative-product-swiper-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+  });
+}
 
 
 

@@ -127,5 +127,28 @@
             background-color: #3B9977;
             opacity: 1;
         }
+
+
+        &.alternative-product-swiper {
+
+            .product-item{
+                background-color: white;
+
+                .product-item__title{
+                    .title{
+                        color: black;
+                    }
+                }
+            }
+
+            .product-item__show-more-button {
+                border-color: black;
+                color: black;
+
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.10);
+                }
+            }
+        }
     }
 }
