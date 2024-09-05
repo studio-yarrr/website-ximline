@@ -87,12 +87,13 @@
                     border: #3B9977 2px solid;
 
                     svg{
-                        color: #3B9977;
+                        fill: #3B9977;
                     }
                 }
 
                 svg{
                     width: 9.1rem;
+                    fill: white;
 
                     &.rotate{
                         rotate: 180deg;
