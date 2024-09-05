@@ -2,8 +2,16 @@
     margin: 0 0 18rem 0;
 
     .products-block__backgroudn-image {
+        position: relative;
         img {
             width: 100%;
+        }
+        .products-block__title{
+            position: absolute;
+            bottom: 8rem;
+            color: white;
+            font-weight: 500;
+            font-size: 6.8rem;
         }
     }
 
