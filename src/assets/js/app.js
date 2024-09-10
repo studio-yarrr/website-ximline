@@ -409,7 +409,23 @@ if (productSwiper) {
   });
 }
 
+const openPopup = document.querySelector('.open-popup');
+const headerPopup = document.querySelector('.header-popup');
 
-
+if(openPopup && headerPopup){
+  openPopup.addEventListener('click', function() {
+    headerPopup.classList.add('active');
+  });
+  
+  function closePopup() {
+    headerPopup.classList.remove('active');
+  }
+  
+  document.querySelector('.close-popup').addEventListener('click', closePopup);
+  
+  document.querySelectorAll('.header-popup-middle a').forEach(function(link) {
+    link.addEventListener('click', closePopup);
+  });
+}
 
 

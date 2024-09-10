@@ -15,6 +15,30 @@
     }
     }
   }
+
+  @include breakpoint($xl-bp) {
+    flex-direction: column-reverse;
+    padding-top: 3.5rem;
+    padding-bottom: 3.1rem;
+    gap: 5.3rem;
+
+    .footer-infos{
+      gap: 2rem;
+
+      .footer-infobot{
+        font-size: 1.5rem;
+      }
+    }
+
+    .footer-list{
+      gap: 2rem;
+    }
+
+    .footer-rules{
+      margin-top: 3.5rem;
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .footer-left {

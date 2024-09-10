@@ -25,6 +25,18 @@ body{
   padding-top: 24.6rem;
   min-height: 89rem;
 
+  @include breakpoint($xl-bp) {
+
+    min-height: 65rem;
+    padding-top: 14.6rem;
+    .main-title{
+      font-size: 5.2rem;
+    }
+    .main-desc, .button{
+      margin-top: 5rem;
+    }
+  }
+
   &::before {
     content: '';
     width: 100%;
@@ -93,6 +105,15 @@ body{
   background-color: rgba($color: #FFFFFF, $alpha: 0.2);
   min-width: 10.2rem;
   height: 64.4rem;
+
+  @media (max-width: 1440px){
+    right: 3rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+
 
   .swiper-arrow {
     width: 2.5rem;
@@ -228,6 +249,23 @@ body{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  
+  @media (max-width: 1440px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4rem;
+    justify-content: center;
+    align-items: center;
+
+
+    .main-li{
+      justify-content: center;
+
+      &::after{
+        display: none;
+      }
+    }
+  }
 }
 
 .main-li {
@@ -273,6 +311,10 @@ body{
   font-size: 9.6rem;
   line-height: 147%;
   color: #1f1e2f;
+
+  @include breakpoint($xl-bp) {
+    font-size: 5.6rem;
+  }
 }
 
 .mcatalog-tabs {
@@ -505,6 +547,13 @@ body{
   justify-content: center;
   padding-left: 8.5rem;
   padding-right: 8.5rem;
+
+  @include breakpoint($xl-bp) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
 }
 
 .mproducts-btn {
@@ -529,6 +578,11 @@ body{
 
   position: relative;
   overflow: hidden;
+
+  @include breakpoint($xl-bp) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 
 .mabout-title {
@@ -588,6 +642,10 @@ body{
   .button{
     margin-top: 5.9rem;
   }
+
+  @include breakpoint($xl-bp) {
+    margin-top: 7.9rem;
+  }
 }
 
 .callback-title {
@@ -602,6 +660,10 @@ body{
   grid-template-columns: 1fr 58.8rem;
   gap: 10.7rem;
   margin-top: 2rem;
+
+  @include breakpoint($xl-bp) {
+    display: block;
+  }
 }
 
 .callback-left {}
@@ -632,6 +694,7 @@ body{
   border: 0;
   border-bottom: 0.1rem solid var(--black);
   transition: border-color .5s;
+  background-color: transparent;
 
   &::placeholder {
     color: rgba(31, 30, 47, 0.3);
@@ -660,4 +723,8 @@ body{
 .callback-img {
   height: 48.3rem;
   width: 100%;
+
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
 }

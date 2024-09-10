@@ -11,6 +11,62 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .dark-logo{
+    display: none;
+  }
+
+  @include breakpoint($xl-bp) {
+    background-color: var(--white);
+    border-bottom: 0.1rem solid #1F1E2F26;
+    flex-direction: row-reverse;
+
+    .open-popup{
+      width: 4.5rem;
+      height: 4.5rem;
+      border: 0.1rem solid var(--lgreen);
+
+      use{
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+
+    .dark-logo{
+      display: block;
+    }
+
+    .logo-icon .menu, .logo-text{
+      display: none;
+    }
+
+    .header-logo{
+      height: 5rem;
+      width: 8.7rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mobile-call{
+      width: 4.8rem;
+      height: 4.8rem;
+      background-color: var(--lgreen);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      svg{
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+
+    .header-popup-middle{
+      display: flex;
+      position: 3.2rem 6.4rem;
+    }
+  } 
 }
 
 .header--active {

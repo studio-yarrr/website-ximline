@@ -89,7 +89,6 @@
 
   @include breakpoint($xl-bp) {
     display: block;
-    margin-left: 3rem;
   }
 
   @include breakpoint($sm-bp) {
