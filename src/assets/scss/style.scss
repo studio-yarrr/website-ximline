@@ -78,7 +78,6 @@ svg {
     }
   }
 
-
   @include breakpoint($sm-bp) {
     padding-right: 2.5rem;
     padding-left: 2.5rem;
@@ -478,8 +477,6 @@ svg {
     flex-direction: column;
     gap: 1.2rem;
 
-
-
     .mproducts-item-mobile {
       padding: 1.2rem;
       display: flex;
@@ -584,5 +581,55 @@ svg {
   }
 }
 
+.for-partners-block{
+  margin-top: 10rem;
+  background-color: rgba(31, 30, 47, 1);
+  padding: 2.4rem 1.2rem;
 
+  @media (min-width: 500px) {
+    display: none;
+  }
+
+  .title{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.4rem;
+  }
+
+  .description{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 2.4rem;
+    line-height: 2.2rem;
+  }
+
+  .adventures-list{
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0 0.8rem;
+    line-height: 2.7rem;
+
+    .adventures-item{
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      color: white;
+      font-size: 1.5rem;
+
+      svg{
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+
+  }
+}
+
+.mproducts, .mabout{
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
+}
 @import "importsBlocks";
