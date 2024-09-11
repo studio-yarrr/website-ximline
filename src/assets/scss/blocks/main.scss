@@ -19,6 +19,10 @@ body{
   .button {
     margin-top: 8rem;
   }
+
+  @include breakpoint($sm-bp) {
+    height: 20.1rem;
+  }
 }
 
 .main-item {
@@ -34,6 +38,12 @@ body{
     }
     .main-desc, .button{
       margin-top: 5rem;
+    }
+  }
+
+  @include breakpoint($sm-bp) {
+    .main-title, .main-desc, .button{
+      display: none;
     }
   }
 
@@ -66,6 +76,10 @@ body{
   letter-spacing: 0.007em;
   position: relative;
   z-index: 1;
+
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
 }
 
 .main-desc {
@@ -263,6 +277,28 @@ body{
 
       &::after{
         display: none;
+      }
+    }
+  }
+
+  @include breakpoint($sm-bp) {
+    gap: 8px;
+
+    .main-li{
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.2rem;
+      background-color: #F2F2F2;
+      height: 100%;
+      border-bottom: 0.2rem solid #1F1E2F;
+      gap: 0.8rem;
+      width: 17.5rem;
+      height: 15.6rem;
+      justify-content: space-between;
+
+      .main-subtitle{
+        font-size: 1.4rem;
+        line-height: 1.7rem;
       }
     }
   }

@@ -71,7 +71,9 @@ svg {
     padding-right: 1.6rem;
     padding-left: 1.6rem;
 
-    .logo-icon, .menu, .logo-text{
+    .logo-icon,
+    .menu,
+    .logo-text {
       display: none;
     }
   }
@@ -101,6 +103,11 @@ svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @include breakpoint($sm-bp) {
+      height: 20.1rem;
+      object-fit: cover;
+    }
   }
 }
 
@@ -116,7 +123,8 @@ svg {
   align-items: center;
   transition: color .5s, text-shadow .5s;
   text-shadow: 0.2rem 0.1rem 0.8rem rgba(4, 254, 32, 0);
-  min-height: 5rem; 
+  min-height: 5rem;
+
   &::after {
     content: '';
     background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M34.2308 15.2989L13 36.0815L13.9428 37L35.6154 16.2549L35.6667 29.587H37V14H19.6667V15.2989H34.2308Z' fill='black'/%3E%3C/svg%3E%0A");
@@ -145,9 +153,11 @@ svg {
 .btn-black {
   border-color: var(--black);
   color: var(--lgreen);
+
   &::after {
-    filter: invert(100%) sepia(27%) saturate(0%) hue-rotate(22deg) brightness(112%) contrast(100%); 
+    filter: invert(100%) sepia(27%) saturate(0%) hue-rotate(22deg) brightness(112%) contrast(100%);
   }
+
   &::before {
     background-color: var(--black);
   }
@@ -156,19 +166,23 @@ svg {
 .btn-grey {
   border-color: var(--grey);
   color: var(--lgreen);
+
   &::after {
-    filter: invert(100%) sepia(27%) saturate(0%) hue-rotate(22deg) brightness(112%) contrast(100%); 
+    filter: invert(100%) sepia(27%) saturate(0%) hue-rotate(22deg) brightness(112%) contrast(100%);
   }
+
   &::before {
     background-color: var(--grey);
   }
 }
 
-.btn, .btn-grey {
+.btn,
+.btn-grey {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--green);
       text-shadow: 0.2rem 0.1rem 0.8rem rgba(4, 254, 32, 0.6);
+
       &::after {
         filter: invert(79%) sepia(35%) saturate(7038%) hue-rotate(78deg) brightness(107%) contrast(118%) drop-shadow(0 0 0.75rem rgba(4, 254, 32, 0.6));
       }
@@ -259,7 +273,7 @@ svg {
 
 [data-animonscroll="scale"].loaded {
   transform: scale3d(1, 1, 1);
-} 
+}
 
 
 .button {
@@ -275,12 +289,16 @@ svg {
   align-items: center;
   width: fit-content;
 
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
+
 
   &:hover {
     filter: brightness(0.9);
   }
 
-  &.white{
+  &.white {
     background-color: var(--white);
     border: 0.2rem solid var(--lgreen);
     color: var(--lgreen);
@@ -293,7 +311,7 @@ svg {
   }
 }
 
-.header-popup{
+.header-popup {
   position: fixed;
   flex-direction: column;
   z-index: 100;
@@ -309,30 +327,30 @@ svg {
     right: 0;
   }
 
-  .header-popup-top{
+  .header-popup-top {
     display: flex;
     justify-content: space-between;
     padding: 1.6rem;
     align-items: center;
 
-    .logo-icon{
+    .logo-icon {
       width: fit-content;
     }
 
 
-    .logo-icon{
+    .logo-icon {
       height: 5rem;
     }
 
-    .close-popup{
+    .close-popup {
       fill: white;
       width: 3.2rem;
       height: 3.2rem;
     }
   }
 
-      
-  .header-popup-middle{
+
+  .header-popup-middle {
     padding: 3.2rem 2rem 7.3rem 2rem;
     color: white;
     font-size: 2.2rem;
@@ -340,20 +358,20 @@ svg {
     flex-direction: column;
     gap: 3.2rem;
 
-    .phone{
+    .phone {
       padding-top: 2.4rem;
       width: 100%;
       border-top: 0.1rem #FFFFFF1A solid;
     }
   }
 
-  .header-popup-bottom{
+  .header-popup-bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 3.2rem 2rem 4.4rem 2rem;
 
-    .button{
+    .button {
       width: 100%;
       justify-content: center;
     }
@@ -361,15 +379,17 @@ svg {
 
 }
 
-.hide-on-pc{
+.hide-on-pc {
   display: none;
+
   @include breakpoint($xl-bp) {
     display: block;
   }
 }
+
 /* Blocks */
 
-.callback-popup{
+.callback-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -379,11 +399,12 @@ svg {
   padding: 6.4rem 1.6rem 2rem 1.6rem;
   overflow: scroll;
 
-  .close-callback-popup{
+  .close-callback-popup {
     position: fixed;
     top: 1.6rem;
     right: 1.6rem;
-    svg{
+
+    svg {
       width: 3.2rem;
       height: 3.2rem;
       fill: var(--lgreen);
@@ -391,30 +412,30 @@ svg {
   }
 
   @include breakpoint($sm-bp) {
-    .section-title{
+    .section-title {
       font-size: 3.2rem;
       font-weight: 600;
       text-align: center
     }
 
-    .callback-subtitle{
+    .callback-subtitle {
       font-size: 1.8rem;
       line-height: 2.4rem;
       text-align: center;
     }
 
-    input{
+    input {
       font-size: 1.6rem;
       margin-top: 3.2rem;
     }
 
-    .callback-text{
+    .callback-text {
       margin-top: 4.8rem;
       font-size: 1.4rem;
       text-align: center;
     }
 
-    .button{
+    .button {
       text-align: center;
       font-size: 1.6rem;
       margin-top: 1.6rem;
@@ -422,7 +443,7 @@ svg {
       justify-content: center;
     }
 
-    .callback-img{
+    .callback-img {
       display: block;
       height: 14.2rem;
       margin-bottom: 1.6rem;
@@ -430,7 +451,138 @@ svg {
   }
 }
 
+.roll-block {
+  margin-top: 9rem
+}
 
+.main {
+  background-color: white;
+  border-top: 0.1rem solid #1F1E2F26;
+  border-bottom: 0.1rem solid #1F1E2F26;
+
+  @include breakpoint($sm-bp) {
+    padding: 0.8rem;
+  }
+}
+
+.mproducts-mobile-block {
+  padding: 0 0.8rem;
+
+  @media (min-width: 500px) {
+    display: none;
+  }
+
+  .mproducts-mobile {
+    margin-top: 4.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+
+
+    .mproducts-item-mobile {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.6rem;
+      background-color: white;
+      box-shadow: 0px 0px 1px 0px #DCE4FA;
+
+
+      .mproducts-item__image {
+        position: relative;
+        height: fit-content;
+        display: flex;
+        overflow: hidden;
+        padding: 1.4rem 1.2rem;
+
+        .title {
+          font-size: 2rem;
+          font-weight: 600;
+          gap: 4rem;
+          justify-content: space-between;
+          z-index: 1;
+          color: white;
+        }
+
+        .mproducts-item__count {
+          padding: 0.8rem;
+          background-color: #FFFFFF1A;
+          color: white;
+          font-size: 1.2rem;
+          font-weight: 500;
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: fit-content;
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        .image-shadow {
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #1F1E2FB2;
+        }
+      }
+
+      .mproducts-item__list {
+        display: flex;
+        gap: 1.2rem;
+        flex-direction: column;
+
+        .mproducts-item__list-item {
+          border: 1px solid var(--bg, rgba(242, 242, 242, 1));
+          width: 100%;
+          padding: 1.2rem;
+          display: flex;
+          justify-content: space-between;
+          gap: 1.2rem;
+          font-size: 1.6rem;
+          align-items: center;
+
+          &:nth-child(n+6) {
+            display: none;
+          }
+
+          svg {
+            width: 2rem;
+            height: 1rem;
+            fill: var(--lgreen);
+          }
+        }
+      }
+    }
+
+    .show-me-more {
+      color: rgba(31, 30, 47, 1);
+      margin-left: auto;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      font-weight: 600;
+      border-bottom: 0.1rem solid var(--lgreen);
+      padding-bottom: 0.4rem;
+    }
+
+
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 1.6rem;
+    justify-content: center;
+  }
+}
 
 
 @import "importsBlocks";

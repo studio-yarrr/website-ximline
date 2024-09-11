@@ -16,7 +16,9 @@
     display: none;
   }
 
-  @include breakpoint($xl-bp) {
+  @media (max-width: 1024px) {
+
+    padding: 0.8rem 0.9rem;
     background-color: var(--white);
     border-bottom: 0.1rem solid #1F1E2F26;
     flex-direction: row-reverse;
@@ -67,6 +69,9 @@
       position: 3.2rem 6.4rem;
     }
   } 
+
+  @include breakpoint($sm-bp) {
+  }
 }
 
 .header--active {
@@ -93,6 +98,10 @@
 
 .out {
   transform: translate3d(0, calc(-100% - 1rem), 0);
+
+  @include breakpoint($sm-bp) {
+    transform: none;
+  }
 }
 
 
