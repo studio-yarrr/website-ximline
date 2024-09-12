@@ -786,5 +786,30 @@ svg {
   }
 }
 
+.breadcrumbs{
+  display: flex;
+  gap: 4rem;
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-top: 8rem;
+  color: rgba(31, 30, 47, 0.4);
+  user-select: none;
 
+  span{
+    position: relative;
+
+    &::after{
+      position: absolute;
+      content: '/';
+      right: -2.6rem;
+    }
+    &:last-child{
+      color: black;
+
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
 @import "importsBlocks";
