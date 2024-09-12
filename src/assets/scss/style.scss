@@ -451,7 +451,32 @@ svg {
 }
 
 .roll-block {
-  margin-top: 9rem
+
+  @media (min-width: 500px) {
+    display: none;
+  }
+  margin-top: 8rem;
+  display: flex;
+  height: fit-content;
+  overflow: scroll;
+  
+  .roll-block-item{
+    background-color: var(--lgreen);
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: fit-content;
+    margin-left: 0.8rem;
+    white-space: nowrap;
+    height: fit-content;
+    padding: 0.8rem;
+
+    &:last-child{
+      margin-right: 0.8rem;
+    }
+  }
 }
 
 .main {
