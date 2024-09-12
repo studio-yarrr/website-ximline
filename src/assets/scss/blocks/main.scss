@@ -3,8 +3,8 @@
   background-color: var(--grey);
 }
 
-body{
-  background-color:#FAFAFA;
+body {
+  background-color: #FAFAFA;
 }
 
 .main-swiper {
@@ -33,16 +33,22 @@ body{
 
     min-height: 65rem;
     padding-top: 14.6rem;
-    .main-title{
+
+    .main-title {
       font-size: 5.2rem;
     }
-    .main-desc, .button{
+
+    .main-desc,
+    .button {
       margin-top: 5rem;
     }
   }
 
   @include breakpoint($sm-bp) {
-    .main-title, .main-desc, .button{
+
+    .main-title,
+    .main-desc,
+    .button {
       display: none;
     }
   }
@@ -120,7 +126,7 @@ body{
   min-width: 10.2rem;
   height: 64.4rem;
 
-  @media (max-width: 1440px){
+  @media (max-width: 1440px) {
     right: 3rem;
   }
 
@@ -263,7 +269,7 @@ body{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
+
   @media (max-width: 1440px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -272,10 +278,10 @@ body{
     align-items: center;
 
 
-    .main-li{
+    .main-li {
       justify-content: center;
 
-      &::after{
+      &::after {
         display: none;
       }
     }
@@ -284,7 +290,7 @@ body{
   @include breakpoint($sm-bp) {
     gap: 8px;
 
-    .main-li{
+    .main-li {
       flex-direction: column;
       align-items: flex-start;
       padding: 1.2rem;
@@ -296,7 +302,7 @@ body{
       height: 15.6rem;
       justify-content: space-between;
 
-      .main-subtitle{
+      .main-subtitle {
         font-size: 1.4rem;
         line-height: 1.7rem;
       }
@@ -675,12 +681,44 @@ body{
 .callback {
   margin-top: 17.9rem;
 
-  .button{
+  .button {
     margin-top: 5.9rem;
   }
 
   @include breakpoint($xl-bp) {
     margin-top: 7.9rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    background-color: white;
+    padding: 2.4rem 1.2rem;
+    flex-direction: row-reverse;
+
+    .section-title {
+      font-weight: 600;
+      font-size: 3.2rem;
+    }
+
+    .callback-subtitle{
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
+
+    input{
+      font-size: 1.6rem;
+      margin-top: 2.4rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .callback-text{
+      font-size: 1.4rem;
+      margin-top: 4.8rem;
+    }
+    .button{
+      margin-top: 1.6rem;
+      width: 100%;
+      justify-content: center;
+    }
   }
 }
 
@@ -701,8 +739,6 @@ body{
     display: block;
   }
 }
-
-.callback-left {}
 
 .callback-subtitle {
   font-weight: 500;
