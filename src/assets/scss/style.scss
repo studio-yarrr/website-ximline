@@ -456,11 +456,12 @@ svg {
 
 .main {
   background-color: white;
-  border-top: 0.1rem solid #1F1E2F26;
-  border-bottom: 0.1rem solid #1F1E2F26;
+
 
   @include breakpoint($sm-bp) {
     padding: 0.8rem;
+    border-top: 0.1rem solid #1F1E2F26;
+    border-bottom: 0.1rem solid #1F1E2F26;
   }
 }
 
@@ -630,6 +631,53 @@ svg {
 .mproducts, .mabout{
   @include breakpoint($sm-bp) {
     display: none;
+  }
+}
+
+.about-company__block{
+
+  @media (min-width: 500px) {
+    display: none;
+  }
+  margin-top: 12rem;
+  display: flex;
+  padding: 0 0.8rem;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  .title{
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #1F1E2F;
+  }
+
+  .main-description{
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.7rem;
+    text-transform: uppercase;
+
+    .hightlighted{
+      color: var(--lgreen)
+    }
+  }
+
+  .description{
+    font-size: 1.6rem;
+
+    .hightlighted{
+      font-weight: 600;
+    }
+  }
+
+  img{ 
+    height: 25.2rem;
+    border: #1F1E2F solid 1.2rem;
+  }
+
+  .button{
+    justify-content: center;
+    width: 100%; 
   }
 }
 @import "importsBlocks";
