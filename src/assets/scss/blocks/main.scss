@@ -3,10 +3,6 @@
   background-color: var(--grey);
 }
 
-body {
-  background-color: #FAFAFA;
-}
-
 .main-swiper {
   .swiper-slide-active {
     .main-img {
@@ -749,6 +745,10 @@ body {
 
 .callback-form {
   max-width: 68.6rem;
+
+  input.is-invalid{
+    border-bottom: red 0.1rem solid;
+  }
 }
 
 .callback-input {

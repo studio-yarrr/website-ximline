@@ -481,9 +481,6 @@ svg {
 }
 
 .main {
-  background-color: white;
-
-
   @include breakpoint($sm-bp) {
     padding: 0.8rem;
     border-top: 0.1rem solid #1F1E2F26;
