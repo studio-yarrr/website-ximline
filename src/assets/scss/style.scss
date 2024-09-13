@@ -321,6 +321,7 @@ svg {
   right: 100%;
   transition: 0.5s;
   top: 0;
+  overflow: scroll;
 
   &.active {
     display: flex;
@@ -351,17 +352,24 @@ svg {
 
 
   .header-popup-middle {
-    padding: 3.2rem 2rem 7.3rem 2rem;
+    padding: 3.2rem 2rem 1rem 2rem;
     color: white;
     font-size: 2.2rem;
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    height: 100%;
 
     .phone {
       padding-top: 2.4rem;
       width: 100%;
       border-top: 0.1rem #FFFFFF1A solid;
+    }
+
+    .button {
+      width: 100%;
+      justify-content: center;
+      margin-top: auto;
     }
   }
 
@@ -371,10 +379,6 @@ svg {
     width: 100%;
     padding: 3.2rem 2rem 4.4rem 2rem;
 
-    .button {
-      width: 100%;
-      justify-content: center;
-    }
   }
 
 }
@@ -396,8 +400,14 @@ svg {
   z-index: 20;
   height: 100dvh;
   background-color: #fff;
-  padding: 6.4rem 1.6rem 2rem 1.6rem;
+  padding: 6.4rem 1.6rem 0 1.6rem;
   overflow: scroll;
+  display: none;
+
+  &.open{
+    display: block;
+    z-index: 1000;
+  }
 
   .close-callback-popup {
     position: fixed;

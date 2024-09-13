@@ -3,10 +3,12 @@
 
     .products-block__backgroudn-image {
         position: relative;
+
         img {
             width: 100%;
         }
-        .products-block__title{
+
+        .products-block__title {
             position: absolute;
             bottom: 8rem;
             color: white;
@@ -19,9 +21,24 @@
         margin-top: 18rem;
         overflow: hidden;
 
+        @media(max-width: 1024px) {
+            margin-top: 4rem;
+        }
+
         &.container {
-            padding: 0 !important;
+            padding: 0;
             width: 144rem;
+
+            @media(max-width: 1440px) {
+                padding-right: 12rem;
+                padding-left: 12rem;
+            }
+
+            @media(max-width: 1024px) {
+                padding: 0 0.8rem;
+
+                width: 100%;
+            }
         }
 
         .product-item {
@@ -36,6 +53,11 @@
             user-select: none;
             overflow: hidden;
 
+            @media(max-width: 1024px) {
+                padding: 2rem;
+                height: 40.4rem;
+            }
+
             .product-item__title {
                 font-weight: 500;
                 z-index: 1;
@@ -43,11 +65,19 @@
                 .title {
                     font-size: 3.2rem;
                     text-transform: uppercase;
+
+                    @media(max-width: 1024px) {
+                        font-size: 2.6rem;
+                    }
                 }
 
                 .description {
                     margin-top: 1rem;
                     font-size: 2rem;
+
+                    @media(max-width: 1024px) {
+                        font-size: 1.6rem;
+                    }
                 }
             }
 
@@ -61,6 +91,10 @@
                 border: 2px solid white;
                 font-size: 2rem;
                 cursor: pointer;
+
+                @media (max-width: 1024px) {
+                    font-size: 1.6rem;
+                }
             }
 
             .background-image {
@@ -139,11 +173,11 @@
 
         &.alternative-product-swiper {
 
-            .product-item{
+            .product-item {
                 background-color: white;
 
-                .product-item__title{
-                    .title{
+                .product-item__title {
+                    .title {
                         color: black;
                     }
                 }
@@ -153,7 +187,7 @@
                 border-color: black;
                 color: black;
 
-                &:hover{
+                &:hover {
                     background-color: rgba(0, 0, 0, 0.10);
                 }
             }

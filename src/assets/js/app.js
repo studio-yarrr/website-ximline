@@ -380,7 +380,7 @@ if (footerRulesElement) {
 const productSwiper = document.querySelector('.image-product-swiper');
 if (productSwiper) {
   const swiperInstance = new Swiper('.image-product-swiper', {
-    slidesPerView: 3,
+    slidesPerView: 3, 
     spaceBetween: 20,
     navigation: {
       nextEl: '.product-swiper-next',
@@ -390,8 +390,18 @@ if (productSwiper) {
       el: '.swiper-pagination',
       clickable: true
     },
+    breakpoints: {
+      500: {
+        slidesPerView: 2.5, 
+        spaceBetween: 10,
+      },
+      1440: {
+        slidesPerView: 3, 
+      },
+    },
   });
 }
+
 
 const AlternativeProductSwiper = document.querySelector('.alternative-product-swiper');
 if (productSwiper) {
@@ -406,26 +416,62 @@ if (productSwiper) {
       el: '.swiper-pagination',
       clickable: true
     },
+    breakpoints: {
+      500: {
+        slidesPerView: 2.5, 
+        spaceBetween: 10,
+      },
+      1440: {
+        slidesPerView: 3, 
+      },
+    },
   });
 }
 
 const openPopup = document.querySelector('.open-popup');
 const headerPopup = document.querySelector('.header-popup');
 
-if(openPopup && headerPopup){
+if (openPopup && headerPopup) {
   openPopup.addEventListener('click', function() {
     headerPopup.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
-  
+
   function closePopup() {
     headerPopup.classList.remove('active');
+    document.body.style.overflow = '';
   }
-  
+
   document.querySelector('.close-popup').addEventListener('click', closePopup);
-  
+
   document.querySelectorAll('.header-popup-middle a').forEach(function(link) {
     link.addEventListener('click', closePopup);
   });
 }
 
 
+
+document.querySelectorAll('.open-callback-popup').forEach(button => {
+  button.addEventListener('click', () => {
+      const popups = document.querySelectorAll('.callback-popup');
+      if (popups.length > 0) {
+          popups.forEach(popup => {
+              popup.classList.add('open');
+          });
+          document.body.style.overflow = 'hidden';
+      }
+  });
+});
+
+const closeButton = document.querySelector('.close-callback-popup');
+if (closeButton) {
+  closeButton.addEventListener('click', () => {
+      const popups = document.querySelectorAll('.callback-popup');
+      if (popups.length > 0) {
+          popups.forEach(popup => {
+              popup.classList.remove('open');
+          });
+          document.body.style.overflow = '';
+      }
+  });
+}
