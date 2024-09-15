@@ -25,6 +25,32 @@
             margin-top: 4rem;
         }
 
+        @media (max-width: 500px) {
+            .product-swiper__controls{
+                display: none!important;
+            }
+
+            .swiper-wrapper{
+                display: flex;
+                flex-direction: column;
+
+                .product-item{
+                    width: 100%;
+                    margin-top: 1.6rem;
+                    height: 21.6rem;
+
+                    .product-item__show-more-button{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        border: none;
+                        background-color: #3B9977;
+                    }
+                }
+            }
+        }
+
         &.container {
             padding: 0;
             width: 144rem;
@@ -189,6 +215,21 @@
 
                 &:hover {
                     background-color: rgba(0, 0, 0, 0.10);
+                }
+            }
+
+            @media (max-width: 500px) {
+                .product-item {
+                    height: 30rem;
+
+                    .background-image{
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    .product-item__show-more-button{
+                        display: none;
+                    }
                 }
             }
         }

@@ -4,6 +4,10 @@
   padding-top: 15.6rem;
   padding-bottom: 8rem;
 
+  @media (max-width: 500px){
+    display: none;
+  }
+
   img {
     position: absolute;
     top: 0;

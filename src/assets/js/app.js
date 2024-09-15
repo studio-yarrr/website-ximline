@@ -377,30 +377,41 @@ if (footerRulesElement) {
 
 
 
-const productSwiper = document.querySelector('.image-product-swiper');
-if (productSwiper) {
-  const swiperInstance = new Swiper('.image-product-swiper', {
-    slidesPerView: 3, 
-    spaceBetween: 20,
-    navigation: {
-      nextEl: '.product-swiper-next',
-      prevEl: '.product-swiper-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    breakpoints: {
-      500: {
-        slidesPerView: 2.5, 
-        spaceBetween: 10,
-      },
-      1440: {
-        slidesPerView: 3, 
-      },
-    },
-  });
-}
+const initSwiper = () => {
+  const screenWidth = window.innerWidth;
+  const productSwiper = document.querySelector('.image-product-swiper');
+
+  if (screenWidth >= 500) {
+    if (!productSwiper.swiper) {
+      new Swiper('.image-product-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.product-swiper-next',
+          prevEl: '.product-swiper-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          500: {
+            slidesPerView: 2.5,
+            spaceBetween: 10,
+          },
+          1440: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    }
+  } else {
+    if (productSwiper.swiper) {
+      productSwiper.swiper.destroy(true, true); 
+    }
+  }
+};
+window.addEventListener('resize', initSwiper);
 
 
 const AlternativeProductSwiper = document.querySelector('.alternative-product-swiper');
