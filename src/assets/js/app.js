@@ -375,20 +375,18 @@ if (footerRulesElement) {
   footerRulesElement.innerHTML = footerRulesElement.innerHTML.replace(/\d{4}/, currentYear);
 }
 
-
-
-const initSwiper = () => {
+const initSwiper = (swiperSelector, nextEl, prevEl) => {
   const screenWidth = window.innerWidth;
-  const productSwiper = document.querySelector('.image-product-swiper');
+  const swiperElement = document.querySelector(swiperSelector);
 
   if (screenWidth >= 500) {
-    if (!productSwiper.swiper) {
-      new Swiper('.image-product-swiper', {
+    if (!swiperElement.swiper) {
+      new Swiper(swiperSelector, {
         slidesPerView: 3,
         spaceBetween: 20,
         navigation: {
-          nextEl: '.product-swiper-next',
-          prevEl: '.product-swiper-prev',
+          nextEl: nextEl,
+          prevEl: prevEl,
         },
         pagination: {
           el: '.swiper-pagination',
@@ -406,38 +404,20 @@ const initSwiper = () => {
       });
     }
   } else {
-    if (productSwiper.swiper) {
-      productSwiper.swiper.destroy(true, true); 
+    if (swiperElement.swiper) {
+      swiperElement.swiper.destroy(true, true); 
     }
   }
 };
-window.addEventListener('resize', initSwiper);
 
+const initializeSwipers = () => {
+  initSwiper('.image-product-swiper', '.product-swiper-next', '.product-swiper-prev');
+  initSwiper('.alternative-product-swiper', '.alternative-product-swiper-next', '.alternative-product-swiper-prev');
+};
 
-const AlternativeProductSwiper = document.querySelector('.alternative-product-swiper');
-if (productSwiper) {
-  const swiperInstance = new Swiper('.alternative-product-swiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: '.alternative-product-swiper-next',
-      prevEl: '.alternative-product-swiper-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    breakpoints: {
-      500: {
-        slidesPerView: 2.5, 
-        spaceBetween: 10,
-      },
-      1440: {
-        slidesPerView: 3, 
-      },
-    },
-  });
-}
+window.addEventListener('load', initializeSwipers);
+window.addEventListener('resize', initializeSwipers);
+
 
 const openPopup = document.querySelector('.open-popup');
 const headerPopup = document.querySelector('.header-popup');
