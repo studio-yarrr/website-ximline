@@ -218,6 +218,10 @@
                 }
             }
 
+            .mobile-product-item__show-more-button{
+                display: none;
+            }
+
             @media (max-width: 500px) {
                 .product-item {
                     height: 30rem;
@@ -229,6 +233,40 @@
 
                     .product-item__show-more-button{
                         display: none;
+                    }
+
+                    .mobile-product-item__show-more-button{
+                        z-index: 12;
+                        display: grid;
+                        grid-template-columns: 5.5rem 1fr 5.5rem;
+                        color: black;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 0.8rem 0;
+                        align-items: center;
+                        border-top: 0.1rem solid #F2F2F2;
+                        
+                        a{
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                        }
+
+                        .pdf{
+                            width: 1.4rem;
+                            height: 2.3rem;
+                            display: flex;
+                            align-self: center;
+                            justify-self: center;
+                        }
+                        .download{
+                            width: 2rem;
+                            height: 2.3rem;
+                            display: flex;
+                            align-self: center;
+                            justify-self: center;
+                        }
                     }
                 }
             }

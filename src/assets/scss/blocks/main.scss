@@ -734,6 +734,12 @@
   @include breakpoint($xl-bp) {
     display: block;
   }
+
+  @include breakpoint($sm-bp) {
+    flex-direction: column-reverse;
+    display: flex;
+    gap: 2.4rem;
+  }
 }
 
 .callback-subtitle {
@@ -795,6 +801,15 @@
 .callback-img {
   height: 48.3rem;
   width: 100%;
+
+  @include breakpoint($sm-bp) {
+    display: block!important;
+    height: 14.2rem;
+
+    img{
+      height: 16.1rem;
+    }
+  }
 
   @include breakpoint($xl-bp) {
     display: none;

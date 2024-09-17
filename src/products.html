@@ -84,6 +84,7 @@
 
  <div class="swiper alternative-product-swiper products-swiper container">
     <div class="swiper-wrapper">
+        {{#repeat 5}}
         <div class="swiper-slide product-item container">
             <img src="./assets/images/product/alternative.png" alt="" class="background-image">
             <div class="product-item__title">
@@ -94,40 +95,21 @@
             <a class="product-item__show-more-button">
                 Подробнее
             </a>
-        </div>
-        <div class="swiper-slide product-item container">
-            <img src="./assets/images/product/alternative.png" alt="" class="background-image">
-            <div class="product-item__title">
-                <div class="title">
-                    lazercool
-                </div>
+
+            <div class="mobile-product-item__show-more-button">
+                <svg class="pdf">
+                    <use href="#pdf"/>
+                </svg>
+                <a>Открыть каталог</a>
+                <a class="download">
+                    <svg >
+                        <use href="#download"/>
+                    </svg>
+                </a>
+
             </div>
-            <a class="product-item__show-more-button">
-                Подробнее
-            </a>
         </div>
-        <div class="swiper-slide product-item container">
-            <img src="./assets/images/product/alternative.png" alt="" class="background-image">
-            <div class="product-item__title">
-                <div class="title">
-                    lazercool
-                </div>
-            </div>
-            <a class="product-item__show-more-button">
-                Подробнее
-            </a>
-        </div>
-        <div class="swiper-slide product-item container">
-            <img src="./assets/images/product/alternative.png" alt="" class="background-image">
-            <div class="product-item__title">
-                <div class="title">
-                    lazercool
-                </div>
-            </div>
-            <a class="product-item__show-more-button">
-                Подробнее
-            </a>
-        </div>
+        {{/repeat}}
     </div>
     <div class="product-swiper__controls">
         <div class="alternative-product-swiper-prev control"> <svg class="rotate">
