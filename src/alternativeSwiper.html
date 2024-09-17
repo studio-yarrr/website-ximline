@@ -1,0 +1,59 @@
+<div class="products-block">
+    <section class="product img-cover container">
+        <h1 class="product-title">Индустриальные клеи и герметики</h1>
+
+        <img src="./assets/images/product/1.jpg" alt="product">
+    </section>
+
+    {{> mobile-navigation-section}}
+
+    <div class="swiper alternative-product-swiper products-swiper container">
+        <div class="swiper-wrapper">
+            {{#repeat 5}}
+            <div class="swiper-slide product-item container">
+                <img src="./assets/images/product/alternative.png" alt="" class="background-image">
+                <div class="product-item__title">
+                    <div class="title">
+                        lazercool
+                    </div>
+                </div>
+                <a class="product-item__show-more-button">
+                    Подробнее
+                </a>
+
+                <div class="mobile-product-item__show-more-button">
+                    <svg class="pdf">
+                        <use href="#pdf" />
+                    </svg>
+                    <a>Открыть каталог</a>
+                    <a class="download">
+                        <svg>
+                            <use href="#download" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+            {{/repeat}}
+        </div>
+        <div class="product-swiper__controls">
+            <div class="alternative-product-swiper-prev control"> <svg class="rotate">
+                    <use class="product-swiper-prev" href="#long-arrow" />
+                </svg></div>
+            <div class="alternative-product-swiper-next control"> <svg class="">
+                    <use href="#long-arrow" />
+                </svg></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="easy-fluid-block">
+        <div class="title">EasyFluid</div>
+        <div class="description">Специально разработанное мобильное приложение для учета и контроля СОЖ на
+            производственном предприятии.</div>
+        <div class="background-text">EasyFluid</div>
+    </div>
+
+    {{> callback}}  
+    </div>
+</div>

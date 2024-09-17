@@ -376,8 +376,10 @@ if (footerRulesElement) {
 }
 
 const initSwiper = (swiperSelector, nextEl, prevEl) => {
-  const screenWidth = window.innerWidth;
   const swiperElement = document.querySelector(swiperSelector);
+  if (!swiperElement) return; // Проверка на существование элемента
+
+  const screenWidth = window.innerWidth;
 
   if (screenWidth >= 500) {
     if (!swiperElement.swiper) {
