@@ -13,7 +13,7 @@
   }
 
   .button {
-    margin-top: 8rem;
+    margin-top: 7rem;
   }
 
   @include breakpoint($sm-bp) {
@@ -86,16 +86,16 @@
 
 .main-desc {
   font-weight: 300;
-  font-size: 3.2rem;
-  line-height: 4.08rem;
+  font-size: 2.8rem;
+  line-height: 3.57rem;
   color: #fff;
-  max-width: 85rem;
+  max-width: 110rem;
   box-sizing: content-box;
   padding-left: 4rem;
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
   border-left: 0.1rem solid var(--white);
-  margin-top: 8rem;
+  margin-top: 6rem;
   letter-spacing: 0.003em;
   position: relative;
   z-index: 1;
@@ -347,7 +347,7 @@
 .section-title {
   font-weight: 500;
   font-size: 9.6rem;
-  line-height: 147%;
+  line-height: 10rem;
   color: #1f1e2f;
 
   @include breakpoint($xl-bp) {
@@ -433,7 +433,7 @@
   &.opened {
     color: var(--green);
 
-    &+.mcatalog-accblock {
+    & + .mcatalog-accblock {
       grid-template-rows: 1fr;
     }
   }
@@ -453,7 +453,7 @@
   overflow: hidden;
   line-height: 2.6rem;
 
-  &>* {
+  & > * {
     &:first-child {
       margin-top: 1rem;
     }
@@ -467,7 +467,7 @@
 .mcatalog-content {
   margin-top: 8rem;
 
-  &>* {
+  & > * {
     animation: fadeEffect .5s;
   }
 }
@@ -537,10 +537,14 @@
 }
 
 .mproducts-list {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 5.8rem;
+
+  @media (max-width: 500px) {
+    display: grid;
+  }
 }
 
 .mproducts-item {
@@ -601,18 +605,22 @@
 }
 
 .mproducts-desc {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 3.2rem;
   text-align: justify;
   color: #1f1e2f;
   line-height: 4.08rem;
-  margin-top: 8rem;
+  margin-top: 5.4rem;
+
+  span {
+    color: #27745A;
+  }
 }
 
 .mabout {
   background-color: var(--grey);
-  padding-top: 15rem;
-  padding-bottom: 23rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 
   position: relative;
   overflow: hidden;
@@ -625,15 +633,15 @@
 
 .mabout-title {
   font-weight: 500;
-  font-size: 6.9rem;
-  line-height: 158%;
+  font-size: 6.8rem;
+  line-height: 10rem;
   color: var(--white);
-  margin-bottom: 1.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .mabout-desc {
   font-weight: 500;
-  font-size: 3.23rem;
+  font-size: 3.2rem;
   line-height: 4.08rem;
   color: #fff;
   max-width: 88rem;
@@ -642,7 +650,7 @@
     margin-bottom: 4rem;
   }
 
-  &>* {
+  & > * {
     &:last-child {
       margin-bottom: 0;
     }
@@ -663,11 +671,10 @@
 }
 
 .mabout-img {
-  height: calc(100% - 4rem);
-  width: 81rem;
+  width: 79rem;
   position: absolute;
-  bottom: 0;
-  right: -1rem;
+  bottom: -3.3rem;
+  right: 0.4rem;
 
   img {
     object-position: top right;
@@ -676,10 +683,6 @@
 
 .callback {
   margin-top: 17.9rem;
-
-  .button {
-    margin-top: 5.9rem;
-  }
 
   @include breakpoint($xl-bp) {
     margin-top: 7.9rem;
@@ -695,22 +698,22 @@
       font-size: 3.2rem;
     }
 
-    .callback-subtitle{
+    .callback-subtitle {
       font-size: 1.8rem;
       line-height: 2.4rem;
     }
 
-    input{
+    input {
       font-size: 1.6rem;
       margin-top: 2.4rem;
       padding: 1rem 1.2rem;
     }
 
-    .callback-text{
+    .callback-text {
       font-size: 1.4rem;
       margin-top: 4.8rem;
     }
-    .button{
+    .button {
       margin-top: 1.6rem;
       width: 100%;
       justify-content: center;
@@ -719,16 +722,15 @@
 }
 
 .callback-title {
+  font-size: 6.8rem;
   font-weight: 500;
-  font-size: 6.9rem;
-  line-height: 147%;
-  color: #1f1e2f;
+  line-height: 7.2rem;
 }
 
 .callback-wrapper {
   display: grid;
   grid-template-columns: 1fr 58.8rem;
-  gap: 10.7rem;
+  gap: 7.3rem;
   margin-top: 2rem;
 
   @include breakpoint($xl-bp) {
@@ -747,28 +749,76 @@
   font-size: 3.2rem;
   line-height: 4.08rem;
   color: #1f1e2f;
+  margin-top: 2.4rem;
 }
 
 .callback-form {
-  max-width: 68.6rem;
+  max-width: 100%;
 
-  input.is-invalid{
+  input.is-invalid {
     border-bottom: red 0.1rem solid;
   }
 }
 
 .callback-input {
-  margin-top: 6rem;
+  margin-top: 1.6rem;
+}
+
+.small-title{
+  margin-top: 2.8rem;
+  margin-bottom: 2.4rem;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.checkboxes-block {
+  display: flex;
+  flex-wrap: wrap;
+ column-gap: 8.6rem;
+  row-gap: 3.6rem;
+  user-select: none;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.8rem;
+
+    input[type="checkbox"] {
+      appearance: none;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1px solid #ccc;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      position: relative;
+
+      &:checked {
+        background-color: #000;
+      }
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
+  .last-item {
+    flex-basis: 100%;
+  }
 }
 
 .inp {
   display: block;
   width: 100%;
   font-weight: 500;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
   color: var(--black);
-  padding: 2rem;
-  padding-top: 0;
+  padding: 2.6rem 0 2.6rem 2.4rem;
   border: 0;
   border-bottom: 0.1rem solid var(--black);
   transition: border-color .5s;
@@ -781,7 +831,29 @@
 
   &:focus {
     outline: none;
-    border-color: var(--green);
+    border-color: #3B9977;
+  }
+}
+
+.button-block{
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  margin-top: 4.3rem;
+
+  a{
+    margin-top: 0;
+  }
+
+  .button{
+    width: 25.2rem;
+    justify-content: center;
+  }
+
+  p{
+    font-size: 1.9rem;
+    line-height: 2.6rem;
+    color: #1F1E2FB2;
   }
 }
 
@@ -799,14 +871,14 @@
 }
 
 .callback-img {
-  height: 48.3rem;
+  height: 86.1rem;
   width: 100%;
 
   @include breakpoint($sm-bp) {
-    display: block!important;
+    display: block !important;
     height: 14.2rem;
 
-    img{
+    img {
       height: 16.1rem;
     }
   }
