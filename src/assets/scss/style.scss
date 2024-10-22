@@ -691,6 +691,8 @@ svg {
 }
 
 .mproducts {
+  margin-top: 19rem;
+  margin-bottom: 17rem;
   .pc-production__block {
     margin-top: 4rem;
     display: flex;
@@ -701,8 +703,6 @@ svg {
       display: flex;
       flex-direction: column;
       gap: 3.2rem;
-      border: 0.1rem solid #DAD9DE;
-
 
       .content {
         max-width: 70.9rem;
@@ -710,6 +710,7 @@ svg {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border: 0.1rem solid #DAD9DE;
 
         .title {
           padding: 3.3rem 4.4rem 0 3.3rem;
@@ -719,7 +720,7 @@ svg {
         }
 
         img {
-          max-width: 70.7rem;
+          max-width: 100%;
         }
       }
 

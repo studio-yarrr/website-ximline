@@ -13,7 +13,7 @@
   }
 
   .button {
-    margin-top: 7rem;
+    margin-top: 6.8rem;
   }
 
   @include breakpoint($sm-bp) {
@@ -75,7 +75,6 @@
   font-size: 6.8rem;
   line-height: 118%;
   color: #fff;
-  letter-spacing: 0.007em;
   position: relative;
   z-index: 1;
 
@@ -92,13 +91,20 @@
   max-width: 110rem;
   box-sizing: content-box;
   padding-left: 4rem;
-  padding-top: 0.9rem;
   padding-bottom: 0.9rem;
-  border-left: 0.1rem solid var(--white);
-  margin-top: 6rem;
-  letter-spacing: 0.003em;
+  margin-top: 7.2rem;
   position: relative;
   z-index: 1;
+
+  &:after{
+    height: 87%;
+    width: 0.1rem;
+    background-color: var(--white);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+  }
 }
 
 .main-btn {
@@ -619,7 +625,7 @@
 
 .mabout {
   background-color: var(--grey);
-  padding-top: 9rem;
+  padding-top: 8rem;
   padding-bottom: 9rem;
 
   position: relative;
@@ -683,6 +689,7 @@
 
 .callback {
   margin-top: 17.9rem;
+  margin-bottom: 18.5rem;
 
   @include breakpoint($xl-bp) {
     margin-top: 7.9rem;
@@ -747,13 +754,17 @@
 .callback-subtitle {
   font-weight: 500;
   font-size: 3.2rem;
-  line-height: 4.08rem;
+  line-height: 4.1rem;
   color: #1f1e2f;
   margin-top: 2.4rem;
 }
 
 .callback-form {
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 0.8rem;
 
   input.is-invalid {
     border-bottom: red 0.1rem solid;
@@ -761,12 +772,11 @@
 }
 
 .callback-input {
-  margin-top: 1.6rem;
 }
 
 .small-title{
-  margin-top: 2.8rem;
-  margin-bottom: 2.4rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
   font-weight: 500;
   font-size: 2rem;
   line-height: 2.8rem;
@@ -776,7 +786,7 @@
   display: flex;
   flex-wrap: wrap;
  column-gap: 8.6rem;
-  row-gap: 3.6rem;
+  row-gap: 3.4rem;
   user-select: none;
 
   .item {
@@ -818,7 +828,7 @@
   font-size: 2rem;
   line-height: 2.8rem;
   color: var(--black);
-  padding: 2.6rem 0 2.6rem 2.4rem;
+  padding: 2.6rem 0 2.5rem 2.4rem;
   border: 0;
   border-bottom: 0.1rem solid var(--black);
   transition: border-color .5s;
@@ -839,21 +849,22 @@
   display: flex;
   gap: 2.4rem;
   align-items: center;
-  margin-top: 4.3rem;
+  margin-top: 2.3rem;
 
   a{
     margin-top: 0;
   }
 
   .button{
-    width: 25.2rem;
+    width: 42rem;
     justify-content: center;
   }
 
   p{
-    font-size: 1.9rem;
-    line-height: 2.6rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
     color: #1F1E2FB2;
+    font-weight: 300;
   }
 }
 

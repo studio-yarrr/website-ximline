@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   background-color: var(--black);
-  padding-top: 8.5rem;
+  padding-top: 8rem;
   padding-bottom: 8.1rem;
   display: flex;
   gap: 17.3rem;
@@ -56,13 +56,12 @@
 
 .footer-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem 3.6rem;
+  grid-template-columns: repeat(2, max-content);
+  gap: 4rem 8rem;
   font-weight: 300;
   font-size: 2rem;
   line-height: 2.55rem;
   color: #fff;
-  opacity: 0;
 
   @include breakpoint($sm-bp) {
     display: flex;
@@ -85,10 +84,9 @@
   font-size: 1.6rem;
   color: rgba(255, 255, 255, 0.6);
   margin-top: 15.2rem;
+  display: flex;
+  gap: 6.7rem;
 
-  p{
-    display: none;
-  }
 
   @media (max-width: 500px) {
     p{

@@ -5,8 +5,8 @@
 
 .menu-list {
   display: flex;
-  gap: 4rem;
-  opacity: 0;
+  gap: 4.1rem;
+  opacity: 1;
 }
 
 .menu-item {
@@ -23,7 +23,7 @@
 
 .menu-tel {
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.13rem;
   color: #fff;
   transition: color .5s;
   @media (hover: hover) and (pointer: fine) {
